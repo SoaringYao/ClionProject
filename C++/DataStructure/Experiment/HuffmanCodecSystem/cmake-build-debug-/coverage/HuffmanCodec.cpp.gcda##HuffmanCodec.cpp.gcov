@@ -1,0 +1,1158 @@
+        -:    0:Source:F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/HuffmanCodecSystem/HuffmanCodec.cpp
+        -:    0:Graph:F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\HuffmanCodecSystem\cmake-build-debug-\CMakeFiles\HuffmanCodecSystem.dir\HuffmanCodec.cpp.gcno
+        -:    0:Data:F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\HuffmanCodecSystem\cmake-build-debug-\CMakeFiles\HuffmanCodecSystem.dir\HuffmanCodec.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://
+        -:    2:// Created by admin on 2023/11/19.
+        -:    3://
+        -:    4:#include "HuffmanCodec.h"
+        -:    5:
+function _Z10InitHTNodei called 5 returned 100% blocks executed 83%
+        5:    6:HTNode *InitHTNode(int n) {
+        -:    7:  HTNode *ht;
+        5:    8:  int m = 2 * n - 1;
+       5*:    9:  ht = new HTNode[m + 1];
+        5:    9-block  0
+branch  0 taken 5 (fallthrough)
+branch  1 taken 0
+        5:    9-block  1
+    %%%%%:    9-block  2
+call    2 never executed
+        5:    9-block  3
+call    3 returned 5
+        5:   10:  return ht;
+        -:   11:}
+        -:   12:
+function _Z6SelectR11HuffmanTreeiRiS1_ called 26 returned 100% blocks executed 80%
+       26:   13:void Select(HuffmanTree &HT, int i, int &s1, int &s2) {
+        -:   14:  int temp;
+       26:   15:  s1 = Min(HT, i);
+       26:   15-block  0
+call    0 returned 26
+       26:   16:  s2 = Min(HT, i);
+call    0 returned 26
+       26:   17:  if (HT.node[s1].weight > HT.node[s2].weight) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 26
+    #####:   18:    temp = s1;
+    #####:   19:    s1 = s2;
+    #####:   20:    s2 = temp;
+    %%%%%:   20-block  0
+        -:   21:  }
+       26:   22:}
+        -:   23:
+function _Z3Min11HuffmanTreei called 52 returned 100% blocks executed 100%
+       52:   24:int Min(HuffmanTree HT, int n) {
+        -:   25:  int i, flag;
+       52:   26:  int f = MAX_WEIGHT;
+     2106:   27:  for (i = 0; i < n; i++) {
+       52:   27-block  0
+     2106:   27-block  1
+branch  0 taken 2054 (fallthrough)
+branch  1 taken 52
+     2054:   27-block  2
+     2054:   28:    if (HT.node[i].weight < f && HT.node[i].parent == -1) {
+     2054:   28-block  0
+branch  0 taken 1509 (fallthrough)
+branch  1 taken 545
+     1509:   28-block  1
+branch  2 taken 183 (fallthrough)
+branch  3 taken 1326
+      183:   29:      f = HT.node[i].weight, flag = i;
+      183:   29-block  0
+        -:   30:    }
+        -:   31:  }
+       52:   32:  HT.node[flag].parent = 0;
+       52:   33:  return flag;
+       52:   33-block  0
+        -:   34:}
+        -:   35:
+function _Z17CreateHuffmanTreeR11HuffmanTreeiPKi called 1 returned 100% blocks executed 100%
+        1:   36:bool CreateHuffmanTree(HuffmanTree &HT, int n, const int *w) {
+        1:   37:  int m = 2 * n - 1, i;
+       54:   38:  for (i = 0; i < m; i++) {
+        1:   38-block  0
+       54:   38-block  1
+branch  0 taken 53 (fallthrough)
+branch  1 taken 1
+       53:   39:    HT.node[i].weight = (i < n) ? w[i] : 0;
+       53:   39-block  0
+branch  0 taken 27 (fallthrough)
+branch  1 taken 26
+       27:   39-block  1
+       26:   39-block  2
+       53:   40:    HT.node[i].parent = -1;
+       53:   41:    HT.node[i].lchild = -1;
+       53:   42:    HT.node[i].rchild = -1;
+       53:   42-block  0
+        -:   43:  }
+        1:   44:  int s1 = 0, s2 = 0;
+       27:   45:  for (i = n; i < m; i++) {
+        1:   45-block  0
+       27:   45-block  1
+branch  0 taken 26 (fallthrough)
+branch  1 taken 1
+       26:   46:    Select(HT, i, s1, s2);
+       26:   46-block  0
+call    0 returned 26
+branch  1 taken 26 (fallthrough)
+branch  2 taken 0 (throw)
+       26:   47:    HT.node[i].weight = HT.node[s1].weight + HT.node[s2].weight;
+       26:   48:    HT.node[i].lchild = s1;
+       26:   49:    HT.node[i].rchild = s2;
+       26:   50:    HT.node[s1].parent = i;
+       26:   51:    HT.node[s2].parent = i;
+       26:   51-block  0
+        -:   52:  }
+       54:   53:  for (i = HT.nodeNum - 1; i >= 0; i--) {
+        1:   53-block  0
+       54:   53-block  1
+branch  0 taken 53 (fallthrough)
+branch  1 taken 1
+       53:   53-block  2
+       53:   54:    if (HT.node[i].parent == -1) {
+       53:   54-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 52
+        1:   55:      HT.root = i;
+        1:   55-block  0
+        -:   56:    }
+        -:   57:  }
+        1:   58:  return OK;
+        1:   58-block  0
+        1:   58-block  1
+        -:   59:}
+        -:   60:
+function _Z19CountTreeByToBeTranR6NumberR11HuffmanTree called 0 returned 0% blocks executed 0%
+    #####:   61:bool CountTreeByToBeTran(Number &num, HuffmanTree &HT) {
+        -:   62:  // 统计文件中每种字母的个数与种类，个数作为其权值保存，种类作为结点数
+    #####:   63:  string str;
+    %%%%%:   63-block  0
+call    0 never executed
+call    1 never executed
+    $$$$$:   63-block  1
+call    2 never executed
+    #####:   64:  ifstream infile;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   64-block  0
+call    3 never executed
+    #####:   65:  infile.open("../ToBeTran.txt");
+    %%%%%:   65-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   66:  getline(infile, str);
+    %%%%%:   66-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   67:  int i, j;
+    #####:   68:  num.length = 0;
+    #####:   69:  for (i = 0; i < str.length(); i++) {
+    %%%%%:   69-block  0
+    %%%%%:   69-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   69-block  2
+    #####:   70:    int count = 0;
+    #####:   71:    num.data[i].num = 0;
+    #####:   72:    for (j = 0; j < num.length; j++) {
+    %%%%%:   72-block  0
+    %%%%%:   72-block  1
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   72-block  2
+    #####:   73:      if (str[i] != num.data[j].ch)
+    %%%%%:   73-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   73-block  1
+branch  3 never executed
+branch  4 never executed
+    #####:   74:        count++;
+    %%%%%:   74-block  0
+        -:   75:      else
+    #####:   76:        num.data[j].num++;
+    %%%%%:   76-block  0
+        -:   77:    }
+        -:   78:    // 最开始先做一次++,放入第一个元素
+        -:   79:    // count一旦与length相同,length++,直到再次有相同元素使count++
+    #####:   80:    if (count == num.length) {
+    %%%%%:   80-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   81:      num.data[num.length].ch = str[i];
+    %%%%%:   81-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   82:      num.data[j].num++;
+    #####:   83:      num.length++;
+    %%%%%:   83-block  0
+        -:   84:    }
+        -:   85:  }
+    #####:   86:  HT.leafNum = num.length;
+    #####:   87:  HT.nodeNum = HT.leafNum * 2 - 1;
+    #####:   88:  HT.node = InitHTNode(HT.leafNum);
+    %%%%%:   88-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   89:  infile.close();
+    %%%%%:   89-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   90:  return OK;
+    %%%%%:   90-block  0
+call    0 never executed
+    %%%%%:   90-block  1
+        -:   91:}
+        -:   92:
+function _Z16CountTreeByInputR6NumberR11HuffmanTree called 1 returned 100% blocks executed 87%
+        1:   93:bool CountTreeByInput(Number &num, HuffmanTree &HT) {
+        -:   94:  int n;
+        1:   95:  ifstream fin("../hfmTree.txt", ios::in);
+        1:   95-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   95-block  1
+call    3 never executed
+        -:   96:  // 无论是cin还是fin,in指的是进入缓冲区,即从键盘进缓冲区和从硬盘进缓冲区
+        -:   97:  // 故此处为读操作
+        1:   98:  if (fin.fail())  // 若不存在此文件，则从终端读入
+        1:   98-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   98-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0
+        -:   99:  {
+        1:  100:    cout << "请输入字符个数n：";
+        1:  100-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  101:    cin >> n;
+        1:  101-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  102:    cout << "请输入字符及相应权值：" << endl;
+        1:  102-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  102-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+       28:  103:    for (int i = 0; i < n; i++)  // 注意点
+        1:  103-block  0
+       28:  103-block  1
+branch  0 taken 27 (fallthrough)
+branch  1 taken 1
+       27:  103-block  2
+        -:  104:    {
+       27:  105:      getchar();  // 取消换行符
+       27:  105-block  0
+call    0 returned 27
+branch  1 taken 27 (fallthrough)
+branch  2 taken 0 (throw)
+       27:  106:      num.data[i].ch = char(getchar());
+       27:  106-block  0
+call    0 returned 27
+branch  1 taken 27 (fallthrough)
+branch  2 taken 0 (throw)
+       27:  107:      cin >> num.data[i].num;
+       27:  107-block  0
+call    0 returned 27
+branch  1 taken 27 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  108:    }
+        1:  109:    num.length = n;
+        1:  110:    HT.leafNum = num.length;
+        1:  111:    HT.nodeNum = HT.leafNum * 2 - 1;
+        1:  112:    HT.node = InitHTNode(HT.leafNum);
+        1:  112-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  112-block  1
+        -:  113:  } else {
+    #####:  114:    CountTreeByHuffTree(num, HT);
+    %%%%%:  114-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  115:  }
+        1:  116:  fin.close();
+        1:  116-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  117:  return OK;
+        1:  117-block  0
+call    0 returned 1
+        1:  117-block  1
+        -:  118:}
+        -:  119:
+function _Z19CountTreeByHuffTreeR6NumberR11HuffmanTree called 4 returned 100% blocks executed 86%
+        4:  120:bool CountTreeByHuffTree(Number &num, HuffmanTree &HT) {
+        -:  121:  char c;
+        -:  122:  int n;
+        8:  123:  ifstream fin("../hfmTree.txt", ios::in);
+        4:  123-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  123-block  1
+call    3 returned 4
+    $$$$$:  123-block  2
+call    4 never executed
+        4:  124:  if (!fin.fail()) {
+        4:  124-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  124-block  1
+branch  3 taken 4 (fallthrough)
+branch  4 taken 0
+        -:  125:    // 如果文件存在
+        4:  126:    fin >> n;
+        4:  126-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  127:    num.length = n;
+        4:  128:    HT.leafNum = num.length;
+        4:  129:    HT.nodeNum = HT.leafNum * 2 - 1;
+        4:  130:    HT.node = InitHTNode(HT.leafNum);
+        4:  130-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  131:    fin.get(c);
+        4:  131-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+      216:  132:    for (int i = 0; i < 2 * n - 1; i++) {
+        4:  132-block  0
+      216:  132-block  1
+branch  0 taken 212 (fallthrough)
+branch  1 taken 4
+      212:  133:      fin.get(num.data[i].ch);
+      212:  133-block  0
+call    0 returned 212
+branch  1 taken 212 (fallthrough)
+branch  2 taken 0 (throw)
+      212:  134:      fin.get(c);
+      212:  134-block  0
+call    0 returned 212
+branch  1 taken 212 (fallthrough)
+branch  2 taken 0 (throw)
+      212:  135:      fin >> HT.node[i].weight;
+      212:  135-block  0
+call    0 returned 212
+branch  1 taken 212 (fallthrough)
+branch  2 taken 0 (throw)
+      212:  136:      fin.get(c);
+      212:  136-block  0
+call    0 returned 212
+branch  1 taken 212 (fallthrough)
+branch  2 taken 0 (throw)
+      212:  137:      fin >> HT.node[i].parent;
+      212:  137-block  0
+call    0 returned 212
+branch  1 taken 212 (fallthrough)
+branch  2 taken 0 (throw)
+      212:  138:      fin.get(c);
+      212:  138-block  0
+call    0 returned 212
+branch  1 taken 212 (fallthrough)
+branch  2 taken 0 (throw)
+      212:  139:      fin >> HT.node[i].lchild;
+      212:  139-block  0
+call    0 returned 212
+branch  1 taken 212 (fallthrough)
+branch  2 taken 0 (throw)
+      212:  140:      fin.get(c);
+      212:  140-block  0
+call    0 returned 212
+branch  1 taken 212 (fallthrough)
+branch  2 taken 0 (throw)
+      212:  141:      fin >> HT.node[i].rchild;
+      212:  141-block  0
+call    0 returned 212
+branch  1 taken 212 (fallthrough)
+branch  2 taken 0 (throw)
+      212:  142:      fin.get(c);
+      212:  142-block  0
+call    0 returned 212
+branch  1 taken 212 (fallthrough)
+branch  2 taken 0 (throw)
+      212:  143:      num.data[i].num = HT.node[i].weight;
+      212:  143-block  0
+        -:  144:    }
+        -:  145:  } else {
+    #####:  146:    cerr << "Can't Find hfmTree.txt" << endl;
+    %%%%%:  146-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  146-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  147:    return false;
+    %%%%%:  147-block  0
+        -:  148:  }
+        -:  149:  // 未经过CreateTree,故需要认为确定root位置
+      216:  150:  for (int i = HT.nodeNum - 1; i >= 0; i--) {
+        4:  150-block  0
+      216:  150-block  1
+branch  0 taken 212 (fallthrough)
+branch  1 taken 4
+      212:  150-block  2
+      212:  151:    if (HT.node[i].parent == -1) {
+      212:  151-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 208
+        4:  152:      HT.root = i;
+        4:  152-block  0
+        -:  153:    }
+        -:  154:  }
+        4:  155:  fin.close();
+        4:  155-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  156:  return OK;
+        4:  156-block  0
+        -:  157:}
+        -:  158:
+function _Z15outPut_CodeFileR6Sqlist called 5 returned 100% blocks executed 76%
+        5:  159:bool outPut_CodeFile(Sqlist &CD) {
+        -:  160:  // 将字符转化为各自的编码
+       10:  161:  string str, results;
+        5:  161-block  0
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+call    3 returned 5
+    $$$$$:  161-block  1
+call    4 never executed
+    $$$$$:  161-block  2
+call    5 never executed
+       10:  162:  ifstream infile;
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 5
+    $$$$$:  162-block  0
+call    4 never executed
+        5:  163:  ofstream outfile;
+        5:  163-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  163-block  1
+call    3 never executed
+        5:  164:  infile.open("../ToBeTran.txt");
+        5:  164-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  165:  getline(infile, str);
+        5:  165-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  166:  infile.close();
+        5:  166-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  167:  outfile.open("../CodeFile.txt");
+        5:  167-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+      140:  168:  for (char i : str) {
+        5:  168-block  0
+call    0 returned 5
+call    1 returned 5
+      140:  168-block  1
+call    2 returned 140
+branch  3 taken 135 (fallthrough)
+branch  4 taken 5
+      135:  168-block  2
+call    5 returned 135
+      135:  168-block  3
+call    6 returned 135
+     3780:  169:    for (int j = 0; j < CD.length; j++) {
+     3780:  169-block  0
+branch  0 taken 3645 (fallthrough)
+branch  1 taken 135
+     3645:  169-block  1
+     3645:  170:      if (i == CD.chars[j].data) results += CD.chars[j].code;
+     3645:  170-block  0
+branch  0 taken 135 (fallthrough)
+branch  1 taken 3510
+      135:  170-block  1
+call    2 returned 135
+branch  3 taken 135 (fallthrough)
+branch  4 taken 0 (throw)
+        -:  171:    }
+        -:  172:  }
+        -:  173:  // 实现压缩
+        -:  174:  // CodeHuffman();
+        5:  175:  outfile << results;
+        5:  175-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  176:  outfile.close();
+        5:  176-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+       10:  177:  return OK;
+        5:  177-block  0
+call    0 returned 5
+        5:  177-block  1
+        -:  178:}
+        -:  179:
+function _Z6CodingR11HuffmanTreeiR6SqlistR6NumberR7SqStack called 535 returned 100% blocks executed 100%
+      535:  180:void Coding(HuffmanTree &HT, int root, Sqlist &CD, Number &num, SqStack &S) {
+        -:  181:  // root是哈夫曼树组HT的根节点位置下标
+        -:  182:  char ch;
+      535:  183:  if (root != -1) {
+      535:  183-block  0
+branch  0 taken 265 (fallthrough)
+branch  1 taken 270
+      265:  184:    if (HT.node[root].lchild == -1) {
+      265:  184-block  0
+branch  0 taken 135 (fallthrough)
+branch  1 taken 130
+      135:  185:      Push_sq(S, '\0');
+      135:  185-block  0
+call    0 returned 135
+branch  1 taken 135 (fallthrough)
+branch  2 taken 0 (throw)
+      135:  186:      CD.chars[root].code = S.elem;
+      135:  186-block  0
+call    0 returned 135
+branch  1 taken 135 (fallthrough)
+branch  2 taken 0 (throw)
+      135:  187:      CD.chars[root].data = num.data[root].ch;
+      135:  188:      Pop_sq(S, ch);
+      135:  188-block  0
+call    0 returned 135
+branch  1 taken 135 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  189:    }
+      265:  190:    Push_sq(S, '0');
+      265:  190-block  0
+call    0 returned 265
+branch  1 taken 265 (fallthrough)
+branch  2 taken 0 (throw)
+      265:  191:    Coding(HT, HT.node[root].lchild, CD, num, S);
+      265:  191-block  0
+call    0 returned 265
+branch  1 taken 265 (fallthrough)
+branch  2 taken 0 (throw)
+      265:  192:    Pop_sq(S, ch);
+      265:  192-block  0
+call    0 returned 265
+branch  1 taken 265 (fallthrough)
+branch  2 taken 0 (throw)
+      265:  193:    Push_sq(S, '1');
+      265:  193-block  0
+call    0 returned 265
+branch  1 taken 265 (fallthrough)
+branch  2 taken 0 (throw)
+      265:  194:    Coding(HT, HT.node[root].rchild, CD, num, S);
+      265:  194-block  0
+call    0 returned 265
+branch  1 taken 265 (fallthrough)
+branch  2 taken 0 (throw)
+      265:  195:    Pop_sq(S, ch);
+      265:  195-block  0
+call    0 returned 265
+branch  1 taken 265 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  196:  }
+      535:  197:}
+      535:  197-block  0
+        -:  198:
+function _Z13HuffmanCodingR11HuffmanTreeR6SqlistR6Number called 5 returned 100% blocks executed 92%
+        5:  199:void HuffmanCoding(HuffmanTree &HT, Sqlist &CD, Number &num) {
+        -:  200:  SqStack S;  // 顺序栈, 用于记录遍历路径
+        5:  201:  InitStack_sq(S);
+        5:  201-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+     275*:  202:  CD.chars = new ElemType_2[2 * HT.leafNum];
+        5:  202-block  0
+branch  0 taken 5 (fallthrough)
+branch  1 taken 0
+        5:  202-block  1
+    %%%%%:  202-block  2
+        5:  202-block  3
+call    2 returned 5
+branch  3 taken 5 (fallthrough)
+branch  4 taken 0 (throw)
+        5:  202-block  4
+      275:  202-block  5
+branch  5 taken 270 (fallthrough)
+branch  6 taken 5
+      270:  202-block  6
+call    7 returned 270
+        5:  203:  CD.length = HT.leafNum;
+        5:  204:  Coding(HT, HT.root, CD, num, S);
+        5:  204-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  205:}
+        5:  205-block  0
+        -:  206:
+function _Z14outPut_hfmTree11HuffmanTree6Number called 1 returned 100% blocks executed 93%
+        1:  207:bool outPut_hfmTree(HuffmanTree HT, Number num) {
+        1:  208:  ofstream huffmanTree;
+        1:  208-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  208-block  1
+call    3 never executed
+        1:  209:  huffmanTree.open("../hfmTree.txt");
+        1:  209-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  210:  huffmanTree << HT.leafNum << endl;
+        1:  210-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  210-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+       54:  211:  for (int i = 0; i < HT.nodeNum; i++) {
+        1:  211-block  0
+       54:  211-block  1
+branch  0 taken 53 (fallthrough)
+branch  1 taken 1
+       53:  211-block  2
+       53:  212:    if (i < HT.leafNum) {
+       53:  212-block  0
+branch  0 taken 27 (fallthrough)
+branch  1 taken 26
+       27:  213:      huffmanTree << num.data[i].ch << "\t";
+       27:  213-block  0
+call    0 returned 27
+branch  1 taken 27 (fallthrough)
+branch  2 taken 0 (throw)
+       27:  213-block  1
+call    3 returned 27
+branch  4 taken 27 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  214:    } else {
+       26:  215:      huffmanTree << i << "\t";
+       26:  215-block  0
+call    0 returned 26
+branch  1 taken 26 (fallthrough)
+branch  2 taken 0 (throw)
+       26:  215-block  1
+call    3 returned 26
+branch  4 taken 26 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  216:    }
+       53:  217:    huffmanTree << HT.node[i].weight << "\t\t";
+       53:  217-block  0
+call    0 returned 53
+branch  1 taken 53 (fallthrough)
+branch  2 taken 0 (throw)
+       53:  217-block  1
+call    3 returned 53
+branch  4 taken 53 (fallthrough)
+branch  5 taken 0 (throw)
+       53:  218:    huffmanTree << HT.node[i].parent << "\t\t";
+       53:  218-block  0
+call    0 returned 53
+branch  1 taken 53 (fallthrough)
+branch  2 taken 0 (throw)
+       53:  218-block  1
+call    3 returned 53
+branch  4 taken 53 (fallthrough)
+branch  5 taken 0 (throw)
+       53:  219:    huffmanTree << HT.node[i].lchild << "\t\t";
+       53:  219-block  0
+call    0 returned 53
+branch  1 taken 53 (fallthrough)
+branch  2 taken 0 (throw)
+       53:  219-block  1
+call    3 returned 53
+branch  4 taken 53 (fallthrough)
+branch  5 taken 0 (throw)
+       53:  220:    huffmanTree << HT.node[i].rchild << endl;
+       53:  220-block  0
+call    0 returned 53
+branch  1 taken 53 (fallthrough)
+branch  2 taken 0 (throw)
+       53:  220-block  1
+call    3 returned 53
+branch  4 taken 53 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  221:  }
+        1:  222:  huffmanTree.close();
+        1:  222-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  223:  return OK;
+        1:  223-block  0
+call    0 returned 1
+        1:  223-block  1
+        -:  224:}
+        -:  225:
+function _Z8DeCoding11HuffmanTree6Number called 3 returned 100% blocks executed 82%
+        3:  226:bool DeCoding(HuffmanTree HT, Number num) {
+        -:  227:  // 获取编码文件
+        6:  228:  string code;
+        3:  228-block  0
+call    0 returned 3
+call    1 returned 3
+    $$$$$:  228-block  1
+call    2 never executed
+        6:  229:  ifstream infile;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 3
+    $$$$$:  229-block  0
+call    4 never executed
+        3:  230:  infile.open("../CodeFile.txt");
+        3:  230-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  231:  infile >> code;
+        3:  231-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  232:  infile.close();
+        3:  232-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  233:  //   cout << code;
+        3:  234:  ofstream outfile;
+        3:  234-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  234-block  1
+call    3 never executed
+        3:  235:  outfile.open("../TextFile.txt");
+        3:  235-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  236:  // 从树根开始，0向左走，1向右走，到达叶子结点为止，获取叶子结点的值
+        3:  237:  int j = 0;
+        3:  237-block  0
+       84:  238:  while (j < code.length()) {
+       84:  238-block  0
+call    0 returned 84
+branch  1 taken 81 (fallthrough)
+branch  2 taken 3
+       81:  238-block  1
+       81:  239:    int i = HT.root;
+       81:  239-block  0
+      435:  240:    while (HT.node[i].lchild != -1 && HT.node[i].rchild != -1) {
+      435:  240-block  0
+branch  0 taken 354 (fallthrough)
+branch  1 taken 81
+      354:  240-block  1
+branch  2 taken 354 (fallthrough)
+branch  3 taken 0
+      354:  240-block  2
+      354:  241:      if (code[j] == '0') {
+      354:  241-block  0
+call    0 returned 354
+branch  1 taken 354 (fallthrough)
+branch  2 taken 0 (throw)
+      354:  241-block  1
+branch  3 taken 174 (fallthrough)
+branch  4 taken 180
+      174:  242:        i = HT.node[i].lchild;
+      174:  243:        j++;
+      174:  243-block  0
+        -:  244:      } else {
+      180:  245:        i = HT.node[i].rchild;
+      180:  246:        j++;
+      180:  246-block  0
+        -:  247:      }
+        -:  248:    }
+       81:  249:    outfile << num.data[i].ch;
+       81:  249-block  0
+call    0 returned 81
+branch  1 taken 81 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  250:  }
+        3:  251:  outfile.close();
+        3:  251-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  252:  return OK;
+        3:  252-block  0
+call    0 returned 3
+        3:  252-block  1
+        -:  253:}
+        -:  254:
+function _Z5Checkv called 3 returned 100% blocks executed 76%
+        3:  255:bool Check() {
+        6:  256:  string str_ToBeTran;
+        3:  256-block  0
+call    0 returned 3
+call    1 returned 3
+    $$$$$:  256-block  1
+call    2 never executed
+        6:  257:  string str_TextFile;
+call    0 returned 3
+call    1 returned 3
+    $$$$$:  257-block  0
+call    2 never executed
+        6:  258:  ifstream ToBeTran;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 3
+    $$$$$:  258-block  0
+call    4 never executed
+        3:  259:  ifstream TextFile;
+        3:  259-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  259-block  1
+call    3 never executed
+        3:  260:  ToBeTran.open("../ToBeTran.txt");
+        3:  260-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  261:  ToBeTran >> str_ToBeTran;
+        3:  261-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  262:  // cout<<str_ToBeTran<<endl;
+        3:  263:  TextFile.open("../TextFile.txt");
+        3:  263-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  264:  TextFile >> str_TextFile;
+        3:  264-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  265:  // cout<<str_TextFile;
+        3:  266:  int count = 0;
+       15:  267:  for (int i = 0; i < str_ToBeTran.length(); i++) {
+        3:  267-block  0
+       15:  267-block  1
+call    0 returned 15
+branch  1 taken 12 (fallthrough)
+branch  2 taken 3
+       12:  267-block  2
+       12:  268:    if (str_ToBeTran[i] == str_TextFile[i]) count++;
+       12:  268-block  0
+call    0 returned 12
+branch  1 taken 12 (fallthrough)
+branch  2 taken 0 (throw)
+       12:  268-block  1
+call    3 returned 12
+branch  4 taken 12 (fallthrough)
+branch  5 taken 0 (throw)
+       12:  268-block  2
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0
+       12:  268-block  3
+        -:  269:  }
+       6*:  270:  if (str_ToBeTran.length() == str_TextFile.length() &&
+        3:  270-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0
+        3:  270-block  1
+    %%%%%:  270-block  2
+        3:  270-block  3
+branch  6 taken 3 (fallthrough)
+branch  7 taken 0
+        3:  271:      count == str_ToBeTran.length()) {
+        3:  271-block  0
+call    0 returned 3
+        3:  272:    cout << "Verify Correct" << endl;
+        3:  272-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  272-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  273:  } else {
+    #####:  274:    cout << "Verify Wrong" << endl;
+    %%%%%:  274-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  274-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  275:  }
+        3:  276:  ToBeTran.close();
+        3:  276-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  277:  TextFile.close();
+        3:  277-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  278:  return OK;
+        3:  278-block  0
+call    0 returned 3
+        3:  278-block  1
+        -:  279:}
+        -:  280:
+function _Z9CodePrintv called 3 returned 100% blocks executed 82%
+        3:  281:bool CodePrint() {
+        6:  282:  string str;
+        3:  282-block  0
+call    0 returned 3
+call    1 returned 3
+    $$$$$:  282-block  1
+call    2 never executed
+        6:  283:  ifstream infile;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 3
+    $$$$$:  283-block  0
+call    4 never executed
+        3:  284:  infile.open("../CodeFile.txt");
+        3:  284-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  285:  getline(infile, str);
+        3:  285-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  286:  infile.close();
+        3:  286-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  287:  ofstream outfile;
+        3:  287-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  287-block  1
+call    3 never executed
+        3:  288:  outfile.open("../CodePrint.txt");
+        3:  288-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+      357:  289:  for (int i = 0; i < str.length(); i++) {
+        3:  289-block  0
+      357:  289-block  1
+call    0 returned 357
+branch  1 taken 354 (fallthrough)
+branch  2 taken 3
+      354:  289-block  2
+      354:  290:    if (i % 50 == 0 && i != 0) {
+      354:  290-block  0
+branch  0 taken 9 (fallthrough)
+branch  1 taken 345
+        9:  290-block  1
+branch  2 taken 6 (fallthrough)
+branch  3 taken 3
+        6:  291:      cout << endl;
+        6:  291-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  292:      outfile << endl;
+        6:  292-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  293:    }
+      354:  294:    cout << str[i];
+      354:  294-block  0
+call    0 returned 354
+branch  1 taken 354 (fallthrough)
+branch  2 taken 0 (throw)
+      354:  294-block  1
+call    3 returned 354
+branch  4 taken 354 (fallthrough)
+branch  5 taken 0 (throw)
+      354:  295:    outfile << str[i];
+      354:  295-block  0
+call    0 returned 354
+branch  1 taken 354 (fallthrough)
+branch  2 taken 0 (throw)
+      354:  295-block  1
+call    3 returned 354
+branch  4 taken 354 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  296:  }
+        3:  297:  cout << endl;
+        3:  297-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  298:  outfile.close();
+        3:  298-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  299:  return OK;
+        3:  299-block  0
+call    0 returned 3
+        3:  299-block  1
+        -:  300:}
+        -:  301:
+        -:  302:// 打印编码二维数组
+function _Z7printHCR6Sqlist called 5 returned 100% blocks executed 100%
+        5:  303:void printHC(Sqlist &CD) {
+        5:  304:  cout << "Huffman Code:" << endl;
+        5:  304-block  0
+call    0 returned 5
+call    1 returned 5
+      140:  305:  for (int i = 0; i < CD.length; i++) {
+      140:  305-block  0
+branch  0 taken 135 (fallthrough)
+branch  1 taken 5
+      135:  306:    cout << CD.chars[i].data << ": " << CD.chars[i].code << endl;
+      135:  306-block  0
+call    0 returned 135
+call    1 returned 135
+call    2 returned 135
+call    3 returned 135
+        -:  307:  }
+        5:  308:}
+        -:  309:
+        -:  310:/*打印二叉树*/
+function _Z9TreePrint11HuffmanTreeR6Sqlistii called 4 returned 100% blocks executed 78%
+        4:  311:void TreePrint(HuffmanTree HT, Sqlist &CD, int i, int n) {
+        8:  312:  ofstream outfile;
+        4:  312-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  312-block  1
+call    3 returned 4
+    $$$$$:  312-block  2
+call    4 never executed
+        4:  313:  outfile.open("../TreePrint.txt");
+        4:  313-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  314:  Print(HT, CD, i, n, outfile);
+        4:  314-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  315:  outfile.close();
+        4:  315-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  316:}
+        -:  317:
+function _Z5Print11HuffmanTreeR6SqlistiiRSt14basic_ofstreamIcSt11char_traitsIcEE called 428 returned 100% blocks executed 100%
+      428:  318:void Print(HuffmanTree HT, Sqlist &CD, int i, int n, ofstream &outfile) {
+      428:  319:  if (i != -1) {
+      428:  319-block  0
+branch  0 taken 212 (fallthrough)
+branch  1 taken 216
+      212:  320:    Print(HT, CD, HT.node[i].rchild, n + 1, outfile);
+      212:  320-block  0
+call    0 returned 212
+     1456:  321:    for (int j = 0; j < n; j++) {
+     1456:  321-block  0
+branch  0 taken 1244 (fallthrough)
+branch  1 taken 212
+     1244:  322:      cout << '\t';
+     1244:  322-block  0
+call    0 returned 1244
+     1244:  323:      outfile << '\t';
+call    0 returned 1244
+        -:  324:    }
+      212:  325:    if (i < HT.leafNum) {
+      212:  325-block  0
+branch  0 taken 108 (fallthrough)
+branch  1 taken 104
+      108:  326:      if (CD.chars[i].data == ' ') {
+      108:  326-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 104
+        4:  327:        cout << '#' << endl;
+        4:  327-block  0
+call    0 returned 4
+call    1 returned 4
+        4:  328:        outfile << '#' << endl;
+call    0 returned 4
+call    1 returned 4
+        -:  329:      } else {
+      104:  330:        cout << CD.chars[i].data << endl;
+      104:  330-block  0
+call    0 returned 104
+call    1 returned 104
+      104:  331:        outfile << CD.chars[i].data << endl;
+call    0 returned 104
+call    1 returned 104
+        -:  332:      }
+        -:  333:    } else {
+      104:  334:      cout << HT.node[i].weight << endl;
+      104:  334-block  0
+call    0 returned 104
+call    1 returned 104
+      104:  335:      outfile << HT.node[i].weight << endl;
+call    0 returned 104
+call    1 returned 104
+        -:  336:    }
+      212:  337:    Print(HT, CD, HT.node[i].lchild, n + 1, outfile);
+      212:  337-block  0
+call    0 returned 212
+        -:  338:  }
+      428:  339:}

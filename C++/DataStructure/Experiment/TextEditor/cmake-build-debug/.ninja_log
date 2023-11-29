@@ -1,0 +1,6 @@
+# ninja log v5
+745	1128	1700301896758756600	TextEditor.exe	fc4c2464c98506af
+2	177	7220791798281864	build.ninja	c9f3b108b8967ad5
+0	445	7220791806174246	CMakeFiles/TextEditor.dir/main.cpp.obj	e7d8d52aa4030b5
+9	449	7220791806214502	CMakeFiles/TextEditor.dir/grep.cpp.obj	48413385bddb8e12
+449	2368	7220791808685620	TextEditor.exe	913fc9c34d439be7

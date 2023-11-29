@@ -1,0 +1,8 @@
+# ninja log v5
+41	369	7220923828269855	CMakeFiles/Huffman.dir/SqStack.cpp.obj	b79b420d2187af71
+2	277	7220924737676856	CMakeFiles/Huffman.dir/word_read.cpp.obj	9beeb5efee706c1b
+50	396	7220923828539906	CMakeFiles/Huffman.dir/huffman.cpp.obj	d7ba786b3116e633
+20	356	7220923828129846	CMakeFiles/Huffman.dir/main.cpp.obj	bc7c7455cd3de430
+32	377	7220923828349883	CMakeFiles/Huffman.dir/function.cpp.obj	49624bf27c70b8a4
+278	417	7220924739041073	Huffman.exe	84bc8aee6def223a
+2	185	7221006262065247	build.ninja	3c7bc1122f549ae4

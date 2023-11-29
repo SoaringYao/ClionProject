@@ -1,0 +1,242 @@
+        -:    0:Source:F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/HuffmanCodecSystem/System.cpp
+        -:    0:Graph:F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\HuffmanCodecSystem\cmake-build-debug-\CMakeFiles\HuffmanCodecSystem.dir\System.cpp.gcno
+        -:    0:Data:F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\HuffmanCodecSystem\cmake-build-debug-\CMakeFiles\HuffmanCodecSystem.dir\System.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://
+        -:    2:// Created by admin on 2023/11/19.
+        -:    3://
+        -:    4:
+        -:    5:#include "System.h"
+        -:    6:
+function _Z6systemv called 5 returned 100% blocks executed 98%
+        5:    7:void system() {
+        -:    8:  HuffmanTree HT;
+        -:    9:  Sqlist code;
+        -:   10:  Number num;
+        -:   11:  char input;
+        5:   12:  int flag = 0;
+        5:   13:  cout << "-----Huffman Codec System-----" << endl;
+        5:   13-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   13-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+        5:   14:  cout << "--I-----(Initialization)------" << endl;
+        5:   14-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   14-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+        5:   15:  cout << "--E--------(Encoding)---------" << endl;
+        5:   15-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   15-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+        5:   16:  cout << "--D--------(Decoding)---------" << endl;
+        5:   16-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   16-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+        5:   17:  cout << "--P---------(Print)-----------" << endl;
+        5:   17-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   17-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+        5:   18:  cout << "--T-------(TreePrint)---------" << endl;
+        5:   18-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   18-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+        5:   19:  cout << "--Q---------(Quit)------------" << endl;
+        5:   19-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   19-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+        5:   20:  cout << "Please Input Instruction: " << endl;
+        5:   20-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   20-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   21:  while (true) {
+       28:   22:    cin >> input;
+       28:   22-block  0
+call    0 returned 28
+branch  1 taken 28 (fallthrough)
+branch  2 taken 0 (throw)
+       28:   23:    if (input == 'I') {
+       28:   23-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 27
+        1:   24:      flag = 1;
+        1:   25:      CountTreeByInput(num, HT);
+        1:   26:      int w[HT.leafNum];
+       28:   27:      for (int i = 0; i < HT.leafNum; i++) {
+        1:   27-block  0
+       28:   27-block  1
+branch  0 taken 27 (fallthrough)
+branch  1 taken 1
+       27:   28:        w[i] = num.data[i].num;
+       27:   28-block  0
+        -:   29:      }
+        1:   30:      CreateHuffmanTree(HT, HT.leafNum, w);
+        1:   30-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   31:      outPut_hfmTree(HT, num);  // 将生成的哈夫曼树保存到hfmTree.txt
+        1:   31-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   32:      cout << "Process Success!" << endl;
+        1:   32-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   32-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   32-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+       27:   33:    } else if (input == 'E') {
+       27:   33-block  0
+branch  0 taken 5 (fallthrough)
+branch  1 taken 22
+        5:   34:      if (!flag) {
+        5:   34-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 1
+        4:   35:        CountTreeByHuffTree(num, HT);
+        4:   35-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   36:      }
+        5:   37:      HuffmanCoding(HT, code, num);  // 获得每个字符的编码
+        5:   37-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   38:      outPut_CodeFile(code);
+        5:   38-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   39:      printHC(code);
+        5:   39-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   40:      cout << "Process Success!" << endl;
+        5:   40-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   40-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+       22:   41:    } else if (input == 'D') {
+       22:   41-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 19
+        3:   42:      DeCoding(HT, num);  // 解码并将结果写入TextFile.txt
+        3:   42-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   43:      cout << "Process Success!" << endl;
+        3:   43-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   43-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   44:      Check();  // 验证操作
+        3:   44-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+       19:   45:    } else if (input == 'P') {
+       19:   45-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 16
+        3:   46:      CodePrint();  // 将文件CodeFile以紧凑格式显示在终端上，每行50个代码。同时将此字符形式的编码文件写入文件CodePrint中
+        3:   46-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   47:      cout << "Process Success!" << endl;
+        3:   47-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   47-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+       16:   48:    } else if (input == 'T') {
+       16:   48-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 12
+        4:   49:      TreePrint(HT, code, HT.root, 1);
+        4:   49-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+       12:   50:    } else if (input == 'Q')
+       12:   50-block  0
+branch  0 taken 5 (fallthrough)
+branch  1 taken 7
+        5:   51:      break;
+        5:   51-block  0
+        -:   52:    else
+        7:   53:      cout << "Please Re-Enter!" << endl;
+        7:   53-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:   53-block  1
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
+branch  5 taken 0 (throw)
+       23:   54:  }
+       23:   54-block  0
+        5:   55:}
+        5:   55-block  0

@@ -1,0 +1,4 @@
+# ninja log v5
+1	899	7229802911429880	CMakeFiles/Josephus.dir/main.cpp.obj	e360dc716dab041d
+101	951	7229802911931072	CMakeFiles/Josephus.dir/function.cpp.obj	ad56c31fcd238d8d
+951	1466	7229802916892019	Josephus.exe	56fd898338866c30

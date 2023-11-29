@@ -1,0 +1,3 @@
+/cygdrive/f/ClionProject/C++/DataStructure/Homework/CS_Function/cmake-build-debug/CMakeFiles/CS_Function.dir
+/cygdrive/f/ClionProject/C++/DataStructure/Homework/CS_Function/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/f/ClionProject/C++/DataStructure/Homework/CS_Function/cmake-build-debug/CMakeFiles/rebuild_cache.dir

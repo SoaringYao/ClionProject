@@ -1,0 +1,7 @@
+# ninja log v5
+1	768	1700314508585431100	CMakeFiles/SwapTreeChild.dir/BinaryTree.cpp.o	bf010af19bd6dc8f
+23	771	1700314508585431100	CMakeFiles/SwapTreeChild.dir/main.cpp.o	f4227746e0e94806
+771	1206	1700314508995176300	SwapTreeChild.exe	13d238e149504566
+17	778	1700315520376321900	CMakeFiles/SwapTreeChild.dir/BinaryTree.cpp.o	23b1c70d531e7c0e
+41	784	1700315520386315300	CMakeFiles/SwapTreeChild.dir/main.cpp.o	15f77cdb0f2ed1b7
+784	1197	1700315520800908000	SwapTreeChild.exe	13d238e149504566

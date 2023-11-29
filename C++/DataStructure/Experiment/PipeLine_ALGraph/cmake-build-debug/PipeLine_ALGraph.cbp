@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="PipeLine_ALGraph"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PipeLine_ALGraph">
+				<Option output="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/PipeLine_ALGraph.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 PipeLine_ALGraph"/>
+					<CompileFile command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PipeLine_ALGraph/fast">
+				<Option output="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/PipeLine_ALGraph.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 PipeLine_ALGraph/fast"/>
+					<CompileFile command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mingw64/bin/mingw32-make.exe -f &quot;F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/ALGraph.cpp">
+			<Option target="PipeLine_ALGraph"/>
+		</Unit>
+		<Unit filename="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/ALGraph.h">
+			<Option target="PipeLine_ALGraph"/>
+		</Unit>
+		<Unit filename="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/Search.cpp">
+			<Option target="PipeLine_ALGraph"/>
+		</Unit>
+		<Unit filename="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/Search.h">
+			<Option target="PipeLine_ALGraph"/>
+		</Unit>
+		<Unit filename="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/define.h">
+			<Option target="PipeLine_ALGraph"/>
+		</Unit>
+		<Unit filename="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/main.cpp">
+			<Option target="PipeLine_ALGraph"/>
+		</Unit>
+		<Unit filename="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/system.cpp">
+			<Option target="PipeLine_ALGraph"/>
+		</Unit>
+		<Unit filename="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/system.h">
+			<Option target="PipeLine_ALGraph"/>
+		</Unit>
+		<Unit filename="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/PipeLine_ALGraph/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

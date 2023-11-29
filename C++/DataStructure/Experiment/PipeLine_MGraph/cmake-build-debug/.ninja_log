@@ -1,0 +1,5 @@
+# ninja log v5
+9	395	7229484973834463	CMakeFiles/PipeLineMGraph.dir/main.cpp.obj	19b94a06f4a83874
+0	397	7229484973844504	CMakeFiles/PipeLineMGraph.dir/Search.cpp.obj	431cefda24129abf
+398	532	7229484975181871	PipeLineMGraph.exe	dcd77863b18860d1
+6	207	7229486265924404	build.ninja	9cdc8bf10f5ab9a1

@@ -1,0 +1,7 @@
+# ninja log v5
+1	804	1700314624348848000	CMakeFiles/NodeLevK.dir/BinaryTree.cpp.o	9ad007d8faef562d
+25	810	1700314624371514400	CMakeFiles/NodeLevK.dir/main.cpp.o	f0832368561eaf68
+811	1193	1700314624754689800	NodeLevK.exe	ffc6d32c917ef52c
+18	782	1700314746794067300	CMakeFiles/NodeLevK.dir/BinaryTree.cpp.o	47c3b1ebfc95cb89
+44	790	1700314746809062100	CMakeFiles/NodeLevK.dir/main.cpp.o	baa979f9f503e48c
+791	1159	1700314747177589500	NodeLevK.exe	ffc6d32c917ef52c

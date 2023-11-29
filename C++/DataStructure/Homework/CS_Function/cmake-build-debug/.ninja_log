@@ -1,0 +1,7 @@
+# ninja log v5
+1	851	1700314946381727600	CMakeFiles/CS_Function.dir/function.cpp.o	8ac5a282f6075b35
+24	867	1700314946405385500	CMakeFiles/CS_Function.dir/main.cpp.o	ebb03b770a7e30b
+47	887	1700314946427406300	CMakeFiles/CS_Function.dir/SqStack.cpp.o	94cc7ac920d91526
+887	1270	1700314946803279900	CS_Function.exe	82114a20fe35de81
+18	688	1700314975626234100	CMakeFiles/CS_Function.dir/main.cpp.o	ebb03b770a7e30b
+689	1066	1700314976004855400	CS_Function.exe	82114a20fe35de81

@@ -1,0 +1,5 @@
+# ninja log v5
+0	461	7229696919706677	CMakeFiles/HashTable.dir/main.cpp.obj	a329bd9a99ee3e8e
+10	468	7229696919776712	CMakeFiles/HashTable.dir/SimHash.cpp.obj	d7f87240be2bbc58
+20	468	7229696919766677	CMakeFiles/HashTable.dir/HashTable.cpp.obj	5757c55c2617a401
+469	614	7229696921212052	HashTable.exe	2faa8cdf1cbd741

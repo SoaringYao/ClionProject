@@ -1,0 +1,6 @@
+# ninja log v5
+1	406	7229484207604098	CMakeFiles/PipeLine_ALGraph.dir/system.cpp.obj	24686e4d87a5d537
+9	411	7229484207663850	CMakeFiles/PipeLine_ALGraph.dir/main.cpp.obj	a66570b8fb580687
+17	418	7229484207734034	CMakeFiles/PipeLine_ALGraph.dir/Search.cpp.obj	6149c787ff330714
+27	422	7229484207773837	CMakeFiles/PipeLine_ALGraph.dir/ALGraph.cpp.obj	57e373f53fccbf77
+422	560	7229484209102611	PipeLine_ALGraph.exe	7d9d9e65595e84f0
