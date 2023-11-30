@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 #include "Hash.h"  //调用哈希结构头文件
 #include "Trie.h"  //调用键树结构头文件
+
 void chengxu();
 int main() {
   //**********************************读取文件中的C语言关键字*****************
