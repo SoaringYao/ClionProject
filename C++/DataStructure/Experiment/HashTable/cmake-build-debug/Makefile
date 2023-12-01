@@ -128,29 +128,53 @@ HashTable/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/build
 .PHONY : HashTable/fast
 
-HashTable.obj: HashTable.cpp.obj
-.PHONY : HashTable.obj
+ClosedHashing.obj: ClosedHashing.cpp.obj
+.PHONY : ClosedHashing.obj
 
 # target to build an object file
-HashTable.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/HashTable.cpp.obj
-.PHONY : HashTable.cpp.obj
+ClosedHashing.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/ClosedHashing.cpp.obj
+.PHONY : ClosedHashing.cpp.obj
 
-HashTable.i: HashTable.cpp.i
-.PHONY : HashTable.i
+ClosedHashing.i: ClosedHashing.cpp.i
+.PHONY : ClosedHashing.i
 
 # target to preprocess a source file
-HashTable.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/HashTable.cpp.i
-.PHONY : HashTable.cpp.i
+ClosedHashing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/ClosedHashing.cpp.i
+.PHONY : ClosedHashing.cpp.i
 
-HashTable.s: HashTable.cpp.s
-.PHONY : HashTable.s
+ClosedHashing.s: ClosedHashing.cpp.s
+.PHONY : ClosedHashing.s
 
 # target to generate assembly for a file
-HashTable.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/HashTable.cpp.s
-.PHONY : HashTable.cpp.s
+ClosedHashing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/ClosedHashing.cpp.s
+.PHONY : ClosedHashing.cpp.s
+
+OpenHashing.obj: OpenHashing.cpp.obj
+.PHONY : OpenHashing.obj
+
+# target to build an object file
+OpenHashing.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/OpenHashing.cpp.obj
+.PHONY : OpenHashing.cpp.obj
+
+OpenHashing.i: OpenHashing.cpp.i
+.PHONY : OpenHashing.i
+
+# target to preprocess a source file
+OpenHashing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/OpenHashing.cpp.i
+.PHONY : OpenHashing.cpp.i
+
+OpenHashing.s: OpenHashing.cpp.s
+.PHONY : OpenHashing.s
+
+# target to generate assembly for a file
+OpenHashing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/OpenHashing.cpp.s
+.PHONY : OpenHashing.cpp.s
 
 SimHash.obj: SimHash.cpp.obj
 .PHONY : SimHash.obj
@@ -209,9 +233,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... HashTable
-	@echo ... HashTable.obj
-	@echo ... HashTable.i
-	@echo ... HashTable.s
+	@echo ... ClosedHashing.obj
+	@echo ... ClosedHashing.i
+	@echo ... ClosedHashing.s
+	@echo ... OpenHashing.obj
+	@echo ... OpenHashing.i
+	@echo ... OpenHashing.s
 	@echo ... SimHash.obj
 	@echo ... SimHash.i
 	@echo ... SimHash.s

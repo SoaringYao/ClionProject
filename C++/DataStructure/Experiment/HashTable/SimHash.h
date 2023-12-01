@@ -5,6 +5,5 @@
 #ifndef HASHTABLE_SIMHASH_H
 #define HASHTABLE_SIMHASH_H
 
-#include "HashTable.h"
 
 #endif  // HASHTABLE_SIMHASH_H
