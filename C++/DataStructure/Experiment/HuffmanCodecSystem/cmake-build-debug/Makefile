@@ -56,10 +56,10 @@ RM = D:\JetBrains\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\HashTable
+CMAKE_SOURCE_DIR = F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\HuffmanCodecSystem
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\HashTable\cmake-build-debug
+CMAKE_BINARY_DIR = F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\HuffmanCodecSystem\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\HashTable\cmake-build-debug\CMakeFiles F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\HashTable\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\HuffmanCodecSystem\cmake-build-debug\CMakeFiles F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\HuffmanCodecSystem\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\HashTable\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\HuffmanCodecSystem\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -116,72 +116,96 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named HashTable
+# Target rules for targets named HuffmanCodecSystem
 
 # Build rule for target.
-HashTable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HashTable
-.PHONY : HashTable
+HuffmanCodecSystem: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HuffmanCodecSystem
+.PHONY : HuffmanCodecSystem
 
 # fast build rule for target.
-HashTable/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/build
-.PHONY : HashTable/fast
+HuffmanCodecSystem/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HuffmanCodecSystem.dir\build.make CMakeFiles/HuffmanCodecSystem.dir/build
+.PHONY : HuffmanCodecSystem/fast
 
-OpenHashing.obj: OpenHashing.cpp.obj
-.PHONY : OpenHashing.obj
-
-# target to build an object file
-OpenHashing.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/OpenHashing.cpp.obj
-.PHONY : OpenHashing.cpp.obj
-
-OpenHashing.i: OpenHashing.cpp.i
-.PHONY : OpenHashing.i
-
-# target to preprocess a source file
-OpenHashing.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/OpenHashing.cpp.i
-.PHONY : OpenHashing.cpp.i
-
-OpenHashing.s: OpenHashing.cpp.s
-.PHONY : OpenHashing.s
-
-# target to generate assembly for a file
-OpenHashing.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/OpenHashing.cpp.s
-.PHONY : OpenHashing.cpp.s
-
-SimHash.obj: SimHash.cpp.obj
-.PHONY : SimHash.obj
+HuffmanCodec.obj: HuffmanCodec.cpp.obj
+.PHONY : HuffmanCodec.obj
 
 # target to build an object file
-SimHash.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/SimHash.cpp.obj
-.PHONY : SimHash.cpp.obj
+HuffmanCodec.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HuffmanCodecSystem.dir\build.make CMakeFiles/HuffmanCodecSystem.dir/HuffmanCodec.cpp.obj
+.PHONY : HuffmanCodec.cpp.obj
 
-SimHash.i: SimHash.cpp.i
-.PHONY : SimHash.i
+HuffmanCodec.i: HuffmanCodec.cpp.i
+.PHONY : HuffmanCodec.i
 
 # target to preprocess a source file
-SimHash.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/SimHash.cpp.i
-.PHONY : SimHash.cpp.i
+HuffmanCodec.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HuffmanCodecSystem.dir\build.make CMakeFiles/HuffmanCodecSystem.dir/HuffmanCodec.cpp.i
+.PHONY : HuffmanCodec.cpp.i
 
-SimHash.s: SimHash.cpp.s
-.PHONY : SimHash.s
+HuffmanCodec.s: HuffmanCodec.cpp.s
+.PHONY : HuffmanCodec.s
 
 # target to generate assembly for a file
-SimHash.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/SimHash.cpp.s
-.PHONY : SimHash.cpp.s
+HuffmanCodec.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HuffmanCodecSystem.dir\build.make CMakeFiles/HuffmanCodecSystem.dir/HuffmanCodec.cpp.s
+.PHONY : HuffmanCodec.cpp.s
+
+SqStack.obj: SqStack.cpp.obj
+.PHONY : SqStack.obj
+
+# target to build an object file
+SqStack.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HuffmanCodecSystem.dir\build.make CMakeFiles/HuffmanCodecSystem.dir/SqStack.cpp.obj
+.PHONY : SqStack.cpp.obj
+
+SqStack.i: SqStack.cpp.i
+.PHONY : SqStack.i
+
+# target to preprocess a source file
+SqStack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HuffmanCodecSystem.dir\build.make CMakeFiles/HuffmanCodecSystem.dir/SqStack.cpp.i
+.PHONY : SqStack.cpp.i
+
+SqStack.s: SqStack.cpp.s
+.PHONY : SqStack.s
+
+# target to generate assembly for a file
+SqStack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HuffmanCodecSystem.dir\build.make CMakeFiles/HuffmanCodecSystem.dir/SqStack.cpp.s
+.PHONY : SqStack.cpp.s
+
+System.obj: System.cpp.obj
+.PHONY : System.obj
+
+# target to build an object file
+System.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HuffmanCodecSystem.dir\build.make CMakeFiles/HuffmanCodecSystem.dir/System.cpp.obj
+.PHONY : System.cpp.obj
+
+System.i: System.cpp.i
+.PHONY : System.i
+
+# target to preprocess a source file
+System.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HuffmanCodecSystem.dir\build.make CMakeFiles/HuffmanCodecSystem.dir/System.cpp.i
+.PHONY : System.cpp.i
+
+System.s: System.cpp.s
+.PHONY : System.s
+
+# target to generate assembly for a file
+System.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HuffmanCodecSystem.dir\build.make CMakeFiles/HuffmanCodecSystem.dir/System.cpp.s
+.PHONY : System.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HuffmanCodecSystem.dir\build.make CMakeFiles/HuffmanCodecSystem.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -189,7 +213,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HuffmanCodecSystem.dir\build.make CMakeFiles/HuffmanCodecSystem.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -197,7 +221,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashTable.dir\build.make CMakeFiles/HashTable.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HuffmanCodecSystem.dir\build.make CMakeFiles/HuffmanCodecSystem.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -208,13 +232,16 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... HashTable
-	@echo ... OpenHashing.obj
-	@echo ... OpenHashing.i
-	@echo ... OpenHashing.s
-	@echo ... SimHash.obj
-	@echo ... SimHash.i
-	@echo ... SimHash.s
+	@echo ... HuffmanCodecSystem
+	@echo ... HuffmanCodec.obj
+	@echo ... HuffmanCodec.i
+	@echo ... HuffmanCodec.s
+	@echo ... SqStack.obj
+	@echo ... SqStack.i
+	@echo ... SqStack.s
+	@echo ... System.obj
+	@echo ... System.i
+	@echo ... System.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

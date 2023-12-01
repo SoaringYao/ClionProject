@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/HashTable.dir/ClosedHashing.cpp.obj"
-  "CMakeFiles/HashTable.dir/ClosedHashing.cpp.obj.d"
   "CMakeFiles/HashTable.dir/OpenHashing.cpp.obj"
   "CMakeFiles/HashTable.dir/OpenHashing.cpp.obj.d"
   "CMakeFiles/HashTable.dir/SimHash.cpp.obj"

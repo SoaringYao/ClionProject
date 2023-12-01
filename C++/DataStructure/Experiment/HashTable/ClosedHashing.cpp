@@ -4,6 +4,10 @@
 
 #include "ClosedHashing.h"
 
+int Hash(KeyType k) {
+  return k;
+}  // Hash
+
 bool SearchOHash(OHashTable H, KeyType k,int &p){
 
 }//SearchOHash

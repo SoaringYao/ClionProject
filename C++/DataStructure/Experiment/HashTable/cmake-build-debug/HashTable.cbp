@@ -80,12 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/HashTable/ClosedHashing.cpp">
-			<Option target="HashTable"/>
-		</Unit>
-		<Unit filename="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/HashTable/ClosedHashing.h">
-			<Option target="HashTable"/>
-		</Unit>
 		<Unit filename="F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/HashTable/OpenHashing.cpp">
 			<Option target="HashTable"/>
 		</Unit>

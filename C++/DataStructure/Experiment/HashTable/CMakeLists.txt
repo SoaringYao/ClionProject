@@ -8,6 +8,4 @@ add_executable(HashTable main.cpp
         SimHash.h
         define.h
         OpenHashing.cpp
-        OpenHashing.h
-        ClosedHashing.cpp
-        ClosedHashing.h)
+        OpenHashing.h)
