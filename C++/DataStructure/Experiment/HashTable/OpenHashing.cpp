@@ -5,6 +5,10 @@
 
 #include "OpenHashing.h"
 
+int Hash(KeyType k) {
+  return ((k[0] - 96) * 100 + k[k.length() - 1]) % 41;
+}  // Hash
+
 LHptr SearchLHash(LHashTable H, const KeyType &k, LHptr &q) {
   // 在开散列哈希表H中查找关键字为k的元素，若查找成功，则返回该元素的位置指针，q指向前驱(无前驱时指向nullptr)
   // 如果查找不成功，返回nullptr，同时q指向链表尾部结点或nullptr
@@ -47,7 +51,3 @@ bool DeleteLHash(LHashTable &H, ElemType e) {
   H.count--;
   return true;
 }  // DeleteLHash
-
-int Hash(KeyType k) {
-  return ((k[0] - 96) * 100 + k[k.length() - 1]) % 41;
-}  // Hash
