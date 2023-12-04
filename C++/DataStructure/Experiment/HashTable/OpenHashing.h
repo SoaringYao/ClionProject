@@ -27,6 +27,6 @@ typedef struct {
 int Hash(KeyType k);
 LHptr SearchLHash(LHashTable H, const KeyType& k, LHptr &q);
 bool InsertLHash(LHashTable &H, const ElemType& e);
-bool DeleteLHash(LHashTable &H, ElemType e);
+bool DeleteLHash(LHashTable &H, const ElemType& e);
 
 #endif  // HASHTABLE_OPENHASHING_H

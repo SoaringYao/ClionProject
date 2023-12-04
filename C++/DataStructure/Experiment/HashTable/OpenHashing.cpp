@@ -37,7 +37,7 @@ bool InsertLHash(LHashTable &H, const ElemType &e) {
   return true;
 }  // InsertLHash
 
-bool DeleteLHash(LHashTable &H, ElemType e) {
+bool DeleteLHash(LHashTable &H, const ElemType& e) {
   // 在开散列哈希表H中删除记录e，如果删除成功，返回true
   // 如果删除不成功，返回false
   LHptr q = nullptr;
