@@ -5,7 +5,7 @@
 #ifndef SIMHASH_SYSTEM_H
 #define SIMHASH_SYSTEM_H
 
-#include "define.h"
+#include "SimAsses.h"
 
 void system();
 

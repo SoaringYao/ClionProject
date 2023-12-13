@@ -1,4 +1,4 @@
-#include "define.h"
+#include "system.h"
 
 int main() {
   system();

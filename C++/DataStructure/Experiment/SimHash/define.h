@@ -11,10 +11,6 @@
 #include <fstream>
 #include <iostream>
 
-#include "OpenHashing.h"
-#include "SimAsses.h"
-#include "system.h"
-
 using namespace std;
 
 typedef int Datatype;

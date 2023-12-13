@@ -5,7 +5,7 @@
 #ifndef SIMHASH_SIMASSES_H
 #define SIMHASH_SIMASSES_H
 
-#include "define.h"
+//#include "define.h"
 #include "OpenHashing.h"
 
 void CreateVectorSim(LHashTable H, int vector[]);
