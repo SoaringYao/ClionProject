@@ -4,25 +4,28 @@
 
 #include "system.h"
 
-void system(){
+void system() {
   LHashTable H;
-  double x1, x2;
-  int vector1[17];
-  int vector2[17];
-  int vector3[17];
+  double Similarity;  // Similarity
+  double Distance;    // Geometric Distance
+  int SimVec[17];
+  int DifVec[17];
+  int MainVec[17];
 
   CreateHash(H);
-  CreateVectorSim(H, vector1);
-  CreateVectorDif(H, vector2);
-  CreateVectorMain(H, vector3);
+  CreateEigenvector(H, SimVec, "../file/similar.c");
+  CreateEigenvector(H, DifVec, "../file/different.c");
+  CreateEigenvector(H, MainVec, "../file/main.c");
 
-  x1 = X1(vector1, vector3);
-  cout << x1 << endl;
-  x2 = X2(vector1, vector3);
-  cout << x2 << endl;
+  cout << endl;
 
-  x1 = X1(vector2, vector3);
-  cout << x1 << endl;
-  x2 = X2(vector2, vector3);
-  cout << x2 << endl;
+  Similarity = SAsses(SimVec, MainVec);
+  cout << "S_(Sim&Main):" << Similarity << endl;
+  Distance = DAsses(SimVec, MainVec);
+  cout << "D_(Sim&Main):" << Distance << endl << endl;
+
+  Similarity = SAsses(DifVec, MainVec);
+  cout << "S_(Dif&Main):" << Similarity << endl;
+  Distance = DAsses(DifVec, MainVec);
+  cout << "D_(Dif&Main):" << Distance << endl;
 }

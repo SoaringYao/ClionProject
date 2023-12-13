@@ -4,42 +4,10 @@
 
 #include "SimAsses.h"
 
-void CreateVectorSim(LHashTable H, int vector[]) {
+void CreateEigenvector(LHashTable H, int X[], const string& FileAddress) {
   KeyType s;
   int n;
-  int i;
-  int j = 0;
-  LHptr p;
-
-  s = new char[10];
-  ifstream fin("../file/similar.c", ios::in);
-  while (!fin.eof()) {
-    ReadWord(fin, s);
-    n = Hash(s);
-    SearchHash(H, n, s);
-  }
-  for (i = 0; i < 43; i++) {
-    p = H.elem[i]->next;
-    while (p) {
-      //                        cout<<" "<<p->data.key;
-      vector[j++] = p->data.Data;
-      p = p->next;
-    }
-  }
-  cout << "VectorSim ";
-  for (i = 0; i < 17; i++) {
-    cout << " " << vector[i];
-  }
-  cout << endl;
-
-  fin.close();
-}
-
-void CreateVectorDif(LHashTable H, int vector[]) {
-  KeyType s;
-  int n;
-  int i;
-  int j = 0;
+  int i, j = 0;
   LHptr p;
 
   for (i = 0; i < 43; i++) {
@@ -51,7 +19,7 @@ void CreateVectorDif(LHashTable H, int vector[]) {
   }
 
   s = new char[10];
-  ifstream fin("../file/different.c", ios::in);
+  ifstream fin(FileAddress, ios::in);
 
   while (!fin.eof()) {
     ReadWord(fin, s);
@@ -62,92 +30,51 @@ void CreateVectorDif(LHashTable H, int vector[]) {
     p = H.elem[i]->next;
     while (p) {
       // cout<<" "<<p->data.key;
-      vector[j++] = p->data.Data;
+      X[j++] = p->data.Data;
       p = p->next;
-      // cout<<" "<<vector[j-1];
+      // cout<<" "<<X[j-1];
     }
   }
-  cout << "VectorDif ";
+  cout << "X_(" << FileAddress << "):" << endl;
   for (i = 0; i < 17; i++) {
-    cout << " " << vector[i];
+    cout << X[i] << " ";
   }
   cout << endl;
 
   fin.close();
 }
 
-void CreateVectorMain(LHashTable H, int vector[]) {
-  KeyType s;
-  int n;
-  int i;
-  int j = 0;
-  LHptr p;
-
-  for (i = 0; i < 43; i++) {
-    p = H.elem[i]->next;
-    while (p) {
-      p->data.Data = 0;
-      p = p->next;
-    }
-  }
-
-  s = new char[10];
-  ifstream fin("../file/main.c", ios::in);
-
-  while (!fin.eof()) {
-    ReadWord(fin, s);
-    n = Hash(s);
-    SearchHash(H, n, s);
-  }
-  for (i = 0; i < 43; i++) {
-    p = H.elem[i]->next;
-    while (p) {
-      // cout<<" "<<p->data.key;
-      vector[j++] = p->data.Data;
-      p = p->next;
-      // cout<<" "<<vector[j-1];
-    }
-  }
-  cout << "VectorMain";
-  for (i = 0; i < 17; i++) {
-    cout << " " << vector[i];
-  }
-  cout << endl;
-
-  fin.close();
-}
-
-double X1(const int vector1[], const int vector2[]) {
+double SAsses(const int X1[], const int X2[]) {
   int i;
   int m;
   double n1, n2;
   n1 = n2 = 0;
   m = 0;
   for (i = 0; i < 17; i++) {
-    m = m + vector1[i] * vector2[i];
+    m = m + X1[i] * X2[i];
   }
   for (i = 0; i < 17; i++) {
-    n1 = n1 + vector1[i] * vector1[i];
-    n2 = n2 + vector2[i] * vector2[i];
+    n1 = n1 + X1[i] * X1[i];
+    n2 = n2 + X2[i] * X2[i];
   }
   n1 = sqrt(n1);
   n2 = sqrt(n2);
   return m / (n1 * n2);
 }
 
-double X2(const int vector1[], const int vector2[]) {
+double DAsses(const int X1[], const int X2[]) {
   int i;
   int m = 0;
   double k;
   for (i = 0; i < 17; i++) {
-    m = m + (vector1[i] - vector2[i]) * (vector1[i] - vector2[i]);
+    m = m + (X1[i] - X2[i]) * (X1[i] - X2[i]);
   }
 
   k = sqrt(m);
   return k;
 }
 
-bool ReadWord(ifstream &fin, char str[]) {
+bool ReadWord(ifstream& fin, char str[]) {
   char c;
   int counter = 0;
 
