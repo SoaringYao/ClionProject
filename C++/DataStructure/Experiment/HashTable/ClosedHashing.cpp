@@ -6,7 +6,7 @@
 
 int Hash(KeyType k) {
   return k;
-}  // Hash
+}  // OHash
 
 bool SearchOHash(OHashTable H, KeyType k,int &p){
 

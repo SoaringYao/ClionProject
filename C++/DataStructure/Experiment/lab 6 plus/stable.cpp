@@ -1,77 +1,25 @@
 #include "stable.h"
 
-__attribute__((unused)) int SeqSearch(StaticSrhTable SST, KeyType kval) {
-  /* 在顺序表SST中顺序查找关键字为kval的记录。
-     若找到，则返回记录在表中的位序；否则，返回0 */
-  int i;
-  SST.elem[0].key = kval;  // 放置监视哨
-  for (i = SST.len; SST.elem[i].key != kval; i--)
-    ;        // 查找
-  return i;  // 查找结果
-}
-
-__attribute__((unused)) int BinSearch(StaticSrhTable SST,  KeyType kval) {
-  int bot, top, mid;
-  bot = 1, top = SST.len;   // 置查找范围初值
-  while (bot <= top) {      // 等于解决待查值在最后的情况。
-    mid = (bot + top) / 2;  // 整型取半会向下舍！！
-    if (SST.elem[mid].key == kval)
-      return mid;  // 查找成功
-    else {
-      if (SST.elem[mid].key > kval)
-        top = mid - 1;  // 前半区
-      else
-        bot = mid + 1;  // 后半区
-    }
-  }
-  return 0;  // 未查找到
-}
-
-/*state BlkInxSearch(StaticSrhTable SST, InxTab Inx, KeyType kval){
-bot = 1, top = Inx.len, blFound = FALSE;    // 置查找范围初值
-if (kval > Inx.elem[top].key) return 0;     // 越界
-while (bot <= top && !blFound) {
-    mid = (bot + top) / 2;
-    if (Inx.elem[mid].key == kval) {         // 查找成功
-         blFound = TRUE; bot = mid;
-}
-    else {
-       if (Inx.elem[mid].key > kval) top = mid - 1; // 前半区
-       else bot = mid + 1;                                    // 后半区
-    }
-}   //退出循环时，bot所指的为所找的块
-bn = Inx.elem[bot].StartAdd;     //第bot块的数据记录起始地址
-if (bot < Inx.len) en = Inx.elem[bot + 1].StartAdd – 1;
-else en = SST.len;                 //第bot块的数据记录尾地址
-for (i = bn; (i <= en) && (SST.elem[i].key != kval); i++);
-if (i <= en) return i;
-return 0;                                          //未查找到
-
-} */
-
 void CreateHash(LHashTable &H) {
-  KeyType keyword[23];  // 此处是指针的指针
-  FILE *fp;
-  LHNodeptr p;
+  KeyType keyword[23];  // typedef char *KeyType 此处为23个指针数组
+  LHptr p;
   char ch;
   int n;
   int i, j;
-  fp = fopen("../file/keywords.txt", "r");
+  ifstream fin("../file/keywords.txt", ios::in);
 
-  keyword[0] = new char[30];
+  keyword[0] = new char[30];  // 给指针数组分配空间
 
   for (i = 1; i < 23; i++) {
     keyword[i] = new char[10];
   }
 
-  // fp.ignore(1024,'=');
+  fin.get(keyword[0], 26);
+  // 将"const char *keywords[] = "存入keyword[0],关键字从1开始存储
 
-  fgets(keyword[0], 26, fp);  // 同时第零位置空
-
-  i = 1;
-  j = 0;
-  while (!feof(fp)) {  // 关键字输入
-    ch = char(fgetc(fp));
+  i = 1, j = 0;
+  while (!fin.eof()) {  // 关键字输入
+    fin.get(ch);
 
     if (ch >= 97 && ch <= 122) {
       keyword[i][j] = ch;
@@ -84,10 +32,10 @@ void CreateHash(LHashTable &H) {
     }
   }
 
-  H.sizeindex = 43;
+  H.size = 43;
   H.count = 0;
-  H.elem = new LHNodeptr[H.sizeindex];  // 初始化为所有结点指针的头指针
-  for (i = 0; i < H.sizeindex; i++) {
+  H.elem = new LHptr[H.size];  // 初始化为所有结点指针的头指针
+  for (i = 0; i < H.size; i++) {
     H.elem[i] = new LHNode;  // 注意两个new不一样
     H.elem[i]->next = nullptr;
   }
@@ -114,7 +62,7 @@ void CreateHash(LHashTable &H) {
       cout<<" "<<p->data.key;
       p=p->next;
    }*/
-  fclose(fp);
+  fin.close();
 }
 
 int Hash(KeyType key) {
@@ -124,7 +72,7 @@ int Hash(KeyType key) {
 }
 
 void SearchHash(LHashTable H, int n, KeyType s) {
-  LHNodeptr p;
+  LHptr p;
   p = H.elem[n]->next;
   while (p) {
     // if(!s.compare(p->data.key)){
@@ -141,15 +89,14 @@ void CreateVectorSim(LHashTable H, int vector[]) {
   int n;
   int i;
   int j = 0;
-  LHNodeptr p;
+  LHptr p;
   // fstream fp1("similar.c");
   //   fp1.ignore(4096,'\n');
-  FILE *fp;
 
   s = new char[10];
-  fp = fopen("../file/similar.c", "r");
-  while (!feof(fp)) {
-    ReadWord(fp, s);
+  ifstream fin("../file/similar.c", ios::in);
+  while (!fin.eof()) {
+    ReadWord(fin, s);
     n = Hash(s);
     SearchHash(H, n, s);
   }
@@ -161,13 +108,13 @@ void CreateVectorSim(LHashTable H, int vector[]) {
       p = p->next;
     }
   }
-  cout << "vector";
+  cout << "VectorSim ";
   for (i = 0; i < 17; i++) {
     cout << " " << vector[i];
   }
   cout << endl;
 
-  fclose(fp);
+  fin.close();
 }
 
 void CreateVectorDif(LHashTable H, int vector[]) {
@@ -175,8 +122,7 @@ void CreateVectorDif(LHashTable H, int vector[]) {
   int n;
   int i;
   int j = 0;
-  LHNodeptr p;
-  FILE *fp;
+  LHptr p;
 
   for (i = 0; i < 43; i++) {
     p = H.elem[i]->next;
@@ -187,31 +133,29 @@ void CreateVectorDif(LHashTable H, int vector[]) {
   }
 
   s = new char[10];
-  // fstream fp1("different.c");
-  fp = fopen("../file/different.c", "r");
+  ifstream fin("../file/different.c", ios::in);
 
-  //   fp1.ignore(4096,'\n');
-  while (!feof(fp)) {
-    ReadWord(fp, s);
+  while (!fin.eof()) {
+    ReadWord(fin, s);
     n = Hash(s);
     SearchHash(H, n, s);
   }
   for (i = 0; i < 43; i++) {
     p = H.elem[i]->next;
     while (p) {
-      //   cout<<" "<<p->data.key;
+      // cout<<" "<<p->data.key;
       vector[j++] = p->data.Data;
       p = p->next;
-      //   cout<<" "<<vector[j-1];
+      // cout<<" "<<vector[j-1];
     }
   }
-  cout << "vector";
+  cout << "VectorDif ";
   for (i = 0; i < 17; i++) {
     cout << " " << vector[i];
   }
   cout << endl;
 
-  fclose(fp);
+  fin.close();
 }
 
 void CreateVectorMain(LHashTable H, int vector[]) {
@@ -219,8 +163,7 @@ void CreateVectorMain(LHashTable H, int vector[]) {
   int n;
   int i;
   int j = 0;
-  LHNodeptr p;
-  FILE *fp;
+  LHptr p;
 
   for (i = 0; i < 43; i++) {
     p = H.elem[i]->next;
@@ -231,29 +174,29 @@ void CreateVectorMain(LHashTable H, int vector[]) {
   }
 
   s = new char[10];
-  fp = fopen("../file/main.c", "r");
+  ifstream fin("../file/main.c", ios::in);
 
-  while (!feof(fp)) {
-    ReadWord(fp, s);
+  while (!fin.eof()) {
+    ReadWord(fin, s);
     n = Hash(s);
     SearchHash(H, n, s);
   }
   for (i = 0; i < 43; i++) {
     p = H.elem[i]->next;
     while (p) {
-      //   cout<<" "<<p->data.key;
+      // cout<<" "<<p->data.key;
       vector[j++] = p->data.Data;
       p = p->next;
-      //   cout<<" "<<vector[j-1];
+      // cout<<" "<<vector[j-1];
     }
   }
-  cout << "vector";
+  cout << "VectorMain";
   for (i = 0; i < 17; i++) {
     cout << " " << vector[i];
   }
   cout << endl;
 
-  fclose(fp);
+  fin.close();
 }
 
 double X1(const int vector1[], const int vector2[]) {
@@ -296,37 +239,71 @@ char FindLast(const char *key) {
   return ch;
 }
 
-int ReadWord(FILE *&fp, char str[]) {
+bool ReadWord(ifstream &fin, char str[]) {
   char c;
-
   int counter = 0;
 
-  while ((c = char(fgetc(fp))) != EOF) {
-    if (isChar(c) && (counter <= 0)) {
+  while (fin.get(c)) {
+    if (!isalpha(c) && (counter <= 0)) {
       // 消去非字母字符
       continue;
-    }
-
-    else if (isChar(c) && (counter > 0)) {
+    } else if (!isalpha(c) && (counter > 0)) {
       // 一个单词读取完毕
       break;
     }
-
     str[counter++] = c;
   }
 
   str[counter] = '\0';
 
-  // 成功返回SUCCESS 否则返回FAIL
-
-  if (counter > 0)
-    return 1;
-
-  else
-    return 0;
+  // 成功返回true,否则返回false
+  return counter > 0;
 }
 
-int isChar(char c) {
-  return !(((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')));
-}
-// 是字母则返回0，否则返回1
+// 在顺序表SST中顺序查找关键字为kval的记录。
+// 若找到，则返回记录在表中的位序；否则返回0
+//__attribute__((unused)) int SeqSearch(StaticSrhTable SST, KeyType kval) {
+//  int i;
+//  SST.elem[0].key = kval;  // 放置监视哨
+//  for (i = SST.len; SST.elem[i].key != kval; i--)
+//    ;        // 查找
+//  return i;  // 查找结果
+//}
+//
+//__attribute__((unused)) int BinSearch(StaticSrhTable SST, KeyType kval) {
+//  int bot, top, mid;
+//  bot = 1, top = SST.len;   // 置查找范围初值
+//  while (bot <= top) {      // 等于解决待查值在最后的情况。
+//    mid = (bot + top) / 2;  // 整型取半会向下舍！！
+//    if (SST.elem[mid].key == kval)
+//      return mid;  // 查找成功
+//    else {
+//      if (SST.elem[mid].key > kval)
+//        top = mid - 1;  // 前半区
+//      else
+//        bot = mid + 1;  // 后半区
+//    }
+//  }
+//  return 0;  // 未查找到
+//}
+
+// state BlkInxSearch(StaticSrhTable SST, InxTab Inx, KeyType kval){
+// bot = 1, top = Inx.len, blFound = FALSE;    // 置查找范围初值
+// if (kval > Inx.elem[top].key) return 0;     // 越界
+// while (bot <= top && !blFound) {
+//     mid = (bot + top) / 2;
+//     if (Inx.elem[mid].key == kval) {         // 查找成功
+//          blFound = TRUE; bot = mid;
+// }
+//     else {
+//        if (Inx.elem[mid].key > kval) top = mid - 1; // 前半区
+//        else bot = mid + 1;                                    // 后半区
+//     }
+// }   //退出循环时，bot所指的为所找的块
+// bn = Inx.elem[bot].StartAdd;     //第bot块的数据记录起始地址
+// if (bot < Inx.len) en = Inx.elem[bot + 1].StartAdd – 1;
+// else en = SST.len;                 //第bot块的数据记录尾地址
+// for (i = bn; (i <= en) && (SST.elem[i].key != kval); i++);
+// if (i <= en) return i;
+// return 0;                                          //未查找到
+// }
