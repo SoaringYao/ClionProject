@@ -22,7 +22,7 @@ void CreateHash(LHashTable &H) {
   // 将"const char *keywords[] = "存入keyword[0],关键字从1开始存储
 
   i = 1, j = 0;
-  while (!fin.eof()) {  // 关键字输入
+  while (!fin.eof()) {
     fin.get(ch);
 
     if (ch >= 97 && ch <= 122) {
@@ -40,12 +40,11 @@ void CreateHash(LHashTable &H) {
   H.count = 0;
   H.elem = new LHptr[H.size];  // 初始化为所有结点指针的头指针
   for (i = 0; i < H.size; i++) {
-    H.elem[i] = new LHNode;  // 注意两个new不一样
+    H.elem[i] = new LHNode;  // 为单个结点分配空间
     H.elem[i]->next = nullptr;
   }
   for (i = 1; i < 18; i++) {
-    n = (keyword[i][0] * 100 + FindLast(keyword[i])) %
-        41;  // 此处为哈希函数运算
+    n = Hash(keyword[i]);
     p = new LHNode;
     p->next = nullptr;
     p->data.Data = 0;  // 计数

@@ -45,11 +45,9 @@ void CreateEigenvector(LHashTable H, int X[], const string& FileAddress) {
 }
 
 double SAsses(const int X1[], const int X2[]) {
-  int i;
-  int m;
-  double n1, n2;
-  n1 = n2 = 0;
-  m = 0;
+  int i, m = 0;
+  double n1 = 0, n2 = 0;
+
   for (i = 0; i < 17; i++) {
     m = m + X1[i] * X2[i];
   }
@@ -57,15 +55,16 @@ double SAsses(const int X1[], const int X2[]) {
     n1 = n1 + X1[i] * X1[i];
     n2 = n2 + X2[i] * X2[i];
   }
+
   n1 = sqrt(n1);
   n2 = sqrt(n2);
   return m / (n1 * n2);
 }
 
 double DAsses(const int X1[], const int X2[]) {
-  int i;
-  int m = 0;
+  int i, m = 0;
   double k;
+
   for (i = 0; i < 17; i++) {
     m = m + (X1[i] - X2[i]) * (X1[i] - X2[i]);
   }
