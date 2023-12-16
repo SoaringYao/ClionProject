@@ -87,7 +87,7 @@ void SearchHash(LHashTable H, int n, KeyType key) {
   }
 }
 
-char FindLast(const KeyType key) {
+char FindLast(KeyType key) { // NOLINT(*-non-const-parameter)
   int i = 0;
   char ch;
   while (key[i] != '\0') {
