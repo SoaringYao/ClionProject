@@ -4,6 +4,7 @@
 
 #include "OpenHashing.h"
 
+// 创建哈希表
 void CreateHash(LHashTable &H) {
   KeyType keyword[23];  // typedef char *KeyType 此处为23个指针数组
   LHptr p;
@@ -68,12 +69,14 @@ void CreateHash(LHashTable &H) {
   fin.close();
 }
 
+// 计算哈希值
 int Hash(KeyType key) {
   int n;
   n = (key[0] * 100 + FindLast(key)) % 41;
   return n;
 }
 
+// 搜索哈希表
 void SearchHash(LHashTable H, int n, KeyType key) {
   LHptr p;
   p = H.elem[n]->next;
@@ -87,6 +90,7 @@ void SearchHash(LHashTable H, int n, KeyType key) {
   }
 }
 
+// 查找最后一个字符
 char FindLast(KeyType key) { // NOLINT(*-non-const-parameter)
   int i = 0;
   char ch;
