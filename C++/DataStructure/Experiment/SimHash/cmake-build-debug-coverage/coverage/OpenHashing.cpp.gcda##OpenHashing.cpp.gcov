@@ -1,0 +1,215 @@
+        -:    0:Source:F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/SimHash/OpenHashing.cpp
+        -:    0:Graph:F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\SimHash\cmake-build-debug-coverage\CMakeFiles\SimHash.dir\OpenHashing.cpp.gcno
+        -:    0:Data:F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\SimHash\cmake-build-debug-coverage\CMakeFiles\SimHash.dir\OpenHashing.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://
+        -:    2:// Created by admin on 2023/12/13.
+        -:    3://
+        -:    4:
+        -:    5:#include "OpenHashing.h"
+        -:    6:
+function _Z10CreateHashR10LHashTable called 1 returned 100% blocks executed 92%
+        1:    7:void CreateHash(LHashTable &H) {
+        -:    8:  KeyType keyword[23];  // typedef char *KeyType 此处为23个指针数组
+        -:    9:  LHptr p;
+        -:   10:  char ch;
+        -:   11:  int n;
+        -:   12:  int i, j;
+        2:   13:  ifstream fin("../file/keywords.txt", ios::in);
+        1:   13-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   13-block  1
+call    3 returned 1
+    $$$$$:   13-block  2
+call    4 never executed
+        -:   14:
+        1:   15:  keyword[0] = new char[30];  // 给指针数组分配空间
+        1:   15-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   16:
+       23:   17:  for (i = 1; i < 23; i++) {
+        1:   17-block  0
+       23:   17-block  1
+branch  0 taken 22 (fallthrough)
+branch  1 taken 1
+       22:   18:    keyword[i] = new char[10];
+       22:   18-block  0
+call    0 returned 22
+branch  1 taken 22 (fallthrough)
+branch  2 taken 0 (throw)
+       22:   18-block  1
+        -:   19:  }
+        -:   20:
+        1:   21:  fin.get(keyword[0], 26);
+        1:   21-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   22:  // 将"const char *keywords[] = "存入keyword[0],关键字从1开始存储
+        -:   23:
+        1:   24:  i = 1, j = 0;
+        1:   24-block  0
+       99:   25:  while (!fin.eof()) {
+       99:   25-block  0
+call    0 returned 99
+branch  1 taken 99 (fallthrough)
+branch  2 taken 0 (throw)
+       99:   25-block  1
+branch  3 taken 98 (fallthrough)
+branch  4 taken 1
+       98:   25-block  2
+       98:   26:    fin.get(ch);
+       98:   26-block  0
+call    0 returned 98
+branch  1 taken 98 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   27:
+       98:   28:    if (ch >= 97 && ch <= 122) {
+       98:   28-block  0
+branch  0 taken 78 (fallthrough)
+branch  1 taken 20
+       78:   28-block  1
+branch  2 taken 78 (fallthrough)
+branch  3 taken 0
+       78:   29:      keyword[i][j] = ch;
+       78:   30:      j++;
+       78:   30-block  0
+        -:   31:
+        -:   32:    } else {
+       20:   33:      keyword[i][j] = '\0';
+       20:   34:      j = 0;
+       20:   35:      i++;
+       20:   35-block  0
+        -:   36:    }
+        -:   37:  }
+        -:   38:
+        1:   39:  H.size = 43;
+        1:   40:  H.count = 0;
+       1*:   41:  H.elem = new LHptr[H.size];  // 初始化为所有结点指针的头指针
+        1:   41-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:   41-block  1
+    %%%%%:   41-block  2
+call    2 never executed
+        1:   41-block  3
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+       44:   42:  for (i = 0; i < H.size; i++) {
+        1:   42-block  0
+       44:   42-block  1
+branch  0 taken 43 (fallthrough)
+branch  1 taken 1
+       43:   43:    H.elem[i] = new LHNode;  // 为单个结点分配空间
+       43:   43-block  0
+call    0 returned 43
+branch  1 taken 43 (fallthrough)
+branch  2 taken 0 (throw)
+       43:   44:    H.elem[i]->next = nullptr;
+       43:   44-block  0
+        -:   45:  }
+       18:   46:  for (i = 1; i < 18; i++) {
+        1:   46-block  0
+       18:   46-block  1
+branch  0 taken 17 (fallthrough)
+branch  1 taken 1
+       17:   46-block  2
+       17:   47:    n = Hash(keyword[i]);
+       17:   47-block  0
+call    0 returned 17
+branch  1 taken 17 (fallthrough)
+branch  2 taken 0 (throw)
+       17:   48:    p = new LHNode;
+       17:   48-block  0
+call    0 returned 17
+branch  1 taken 17 (fallthrough)
+branch  2 taken 0 (throw)
+       17:   49:    p->next = nullptr;
+       17:   50:    p->data.Data = 0;  // 计数
+       17:   51:    p->data.key = new char[10];
+       17:   51-block  0
+call    0 returned 17
+branch  1 taken 17 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   52:    // p->data.key=keyword[i];
+       17:   53:    strcpy(p->data.key, keyword[i]);
+        -:   54:
+       17:   55:    if (!H.elem[n]->next) {
+       17:   55-block  0
+branch  0 taken 13 (fallthrough)
+branch  1 taken 4
+       13:   56:      H.elem[n]->next = p;
+       13:   56-block  0
+        -:   57:    } else {
+        4:   58:      p->next = H.elem[n]->next;
+        4:   59:      H.elem[n]->next = p;
+        4:   59-block  0
+        -:   60:    }
+        -:   61:    // cout<<" "<<p->data.key<<n;
+        -:   62:  }
+        -:   63:  /* p=H.elem[0]->next;
+        -:   64:   while(p){
+        -:   65:      cout<<" "<<p->data.key;
+        -:   66:      p=p->next;
+        -:   67:   }*/
+        1:   68:  fin.close();
+        1:   68-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   69:}
+        -:   70:
+function _Z4HashPc called 196 returned 100% blocks executed 100%
+      196:   71:int Hash(KeyType key) {
+        -:   72:  int n;
+      196:   73:  n = (key[0] * 100 + FindLast(key)) % 41;
+      196:   73-block  0
+call    0 returned 196
+      196:   74:  return n;
+        -:   75:}
+        -:   76:
+function _Z10SearchHash10LHashTableiPc called 179 returned 100% blocks executed 100%
+      179:   77:void SearchHash(LHashTable H, int n, KeyType key) {
+        -:   78:  LHptr p;
+      179:   79:  p = H.elem[n]->next;
+      179:   79-block  0
+      249:   80:  while (p) {
+      249:   80-block  0
+branch  0 taken 133 (fallthrough)
+branch  1 taken 116
+        -:   81:    // if(!key.compare(p->data.key)){
+      133:   82:    if (!strcmp(key, p->data.key)) {  // 等于则返回0
+      133:   82-block  0
+branch  0 taken 63 (fallthrough)
+branch  1 taken 70
+       63:   83:      p->data.Data++;
+       63:   84:      break;
+       63:   84-block  0
+        -:   85:    }
+       70:   86:    p = p->next;
+       70:   86-block  0
+        -:   87:  }
+      179:   88:}
+        -:   89:
+function _Z8FindLastPc called 196 returned 100% blocks executed 100%
+      196:   90:char FindLast(const KeyType key) {
+      196:   91:  int i = 0;
+      196:   91-block  0
+        -:   92:  char ch;
+      842:   93:  while (key[i] != '\0') {
+      842:   93-block  0
+branch  0 taken 646 (fallthrough)
+branch  1 taken 196
+      646:   94:    ch = key[i];
+      646:   95:    i++;
+      646:   95-block  0
+        -:   96:  }
+      196:   97:  return ch;
+      196:   97-block  0
+        -:   98:}

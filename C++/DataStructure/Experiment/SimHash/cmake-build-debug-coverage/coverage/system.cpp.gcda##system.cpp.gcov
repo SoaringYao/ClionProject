@@ -1,0 +1,165 @@
+        -:    0:Source:F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/SimHash/system.cpp
+        -:    0:Graph:F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\SimHash\cmake-build-debug-coverage\CMakeFiles\SimHash.dir\system.cpp.gcno
+        -:    0:Data:F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\SimHash\cmake-build-debug-coverage\CMakeFiles\SimHash.dir\system.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://
+        -:    2:// Created by admin on 2023/12/13.
+        -:    3://
+        -:    4:
+        -:    5:#include "system.h"
+        -:    6:
+function _Z6systemv called 1 returned 100% blocks executed 67%
+        1:    7:void system() {
+        -:    8:  LHashTable H;
+        -:    9:  double Similarity;  // Similarity
+        -:   10:  double Distance;    // Geometric Distance
+        -:   11:  int SimVec[17];
+        -:   12:  int DifVec[17];
+        -:   13:  int MainVec[17];
+        -:   14:
+        1:   15:  CreateHash(H);
+        1:   15-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   16:  CreateEigenvector(H, SimVec, "../file/similar.c");
+        1:   16-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   16-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   16-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   16-block  3
+call    9 never executed
+    $$$$$:   16-block  4
+    $$$$$:   16-block  5
+call   10 never executed
+    $$$$$:   16-block  6
+        1:   17:  CreateEigenvector(H, DifVec, "../file/different.c");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   17-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   17-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   17-block  2
+call    9 never executed
+    $$$$$:   17-block  3
+    $$$$$:   17-block  4
+call   10 never executed
+    $$$$$:   17-block  5
+        1:   18:  CreateEigenvector(H, MainVec, "../file/main.c");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   18-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   18-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   18-block  2
+call    9 never executed
+    $$$$$:   18-block  3
+    $$$$$:   18-block  4
+call   10 never executed
+    $$$$$:   18-block  5
+        -:   19:
+        1:   20:  cout << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   21:
+        1:   22:  Similarity = SAsses(SimVec, MainVec);
+        1:   22-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   23:  cout << "S_(Sim&Main):" << Similarity << endl;
+        1:   23-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   23-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   23-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   24:  Distance = DAsses(SimVec, MainVec);
+        1:   24-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   25:  cout << "D_(Sim&Main):" << Distance << endl << endl;
+        1:   25-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   25-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   25-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   25-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        -:   26:
+        1:   27:  Similarity = SAsses(DifVec, MainVec);
+        1:   27-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   28:  cout << "S_(Dif&Main):" << Similarity << endl;
+        1:   28-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   28-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   28-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   29:  Distance = DAsses(DifVec, MainVec);
+        1:   29-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   30:  cout << "D_(Dif&Main):" << Distance << endl;
+        1:   30-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   30-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   30-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   31:}
+        1:   31-block  0

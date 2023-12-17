@@ -1,0 +1,241 @@
+        -:    0:Source:F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/SimHash/SimAsses.cpp
+        -:    0:Graph:F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\SimHash\cmake-build-debug-coverage\CMakeFiles\SimHash.dir\SimAsses.cpp.gcno
+        -:    0:Data:F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\SimHash\cmake-build-debug-coverage\CMakeFiles\SimHash.dir\SimAsses.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://
+        -:    2:// Created by admin on 2023/12/13.
+        -:    3://
+        -:    4:
+        -:    5:#include "SimAsses.h"
+        -:    6:
+function _Z17CreateEigenvector10LHashTablePiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 3 returned 100% blocks executed 94%
+        3:    7:void CreateEigenvector(LHashTable H, int X[], const string& FileAddress) {
+        -:    8:  KeyType s;
+        -:    9:  int n;
+        3:   10:  int i, j = 0;
+        -:   11:  LHptr p;
+        -:   12:
+      132:   13:  for (i = 0; i < 43; i++) {
+        3:   13-block  0
+      132:   13-block  1
+branch  0 taken 129 (fallthrough)
+branch  1 taken 3
+      129:   13-block  2
+      129:   14:    p = H.elem[i]->next;
+      129:   14-block  0
+      180:   15:    while (p) {
+      180:   15-block  0
+branch  0 taken 51 (fallthrough)
+branch  1 taken 129
+       51:   16:      p->data.Data = 0;
+       51:   17:      p = p->next;
+       51:   17-block  0
+        -:   18:    }
+        -:   19:  }
+        -:   20:
+        3:   21:  s = new char[10];
+        3:   21-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        6:   22:  ifstream fin(FileAddress, ios::in);
+        3:   22-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   22-block  1
+call    3 returned 3
+    $$$$$:   22-block  2
+call    4 never executed
+        -:   23:
+      182:   24:  while (!fin.eof()) {
+      182:   24-block  0
+call    0 returned 182
+branch  1 taken 182 (fallthrough)
+branch  2 taken 0 (throw)
+      182:   24-block  1
+branch  3 taken 179 (fallthrough)
+branch  4 taken 3
+      179:   24-block  2
+      179:   25:    ReadWord(fin, s);
+      179:   25-block  0
+call    0 returned 179
+branch  1 taken 179 (fallthrough)
+branch  2 taken 0 (throw)
+      179:   26:    n = Hash(s);
+      179:   26-block  0
+call    0 returned 179
+branch  1 taken 179 (fallthrough)
+branch  2 taken 0 (throw)
+      179:   27:    SearchHash(H, n, s);
+      179:   27-block  0
+call    0 returned 179
+branch  1 taken 179 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   28:  }
+      132:   29:  for (i = 0; i < 43; i++) {
+        3:   29-block  0
+      132:   29-block  1
+branch  0 taken 129 (fallthrough)
+branch  1 taken 3
+      129:   29-block  2
+      129:   30:    p = H.elem[i]->next;
+      129:   30-block  0
+      180:   31:    while (p) {
+      180:   31-block  0
+branch  0 taken 51 (fallthrough)
+branch  1 taken 129
+        -:   32:      // cout<<" "<<p->data.key;
+       51:   33:      X[j++] = p->data.Data;
+       51:   34:      p = p->next;
+       51:   34-block  0
+        -:   35:      // cout<<" "<<X[j-1];
+        -:   36:    }
+        -:   37:  }
+        3:   38:  cout << "X_(" << FileAddress << "):" << endl;
+        3:   38-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   38-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   38-block  2
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:   38-block  3
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+       54:   39:  for (i = 0; i < 17; i++) {
+        3:   39-block  0
+       54:   39-block  1
+branch  0 taken 51 (fallthrough)
+branch  1 taken 3
+       51:   39-block  2
+       51:   40:    cout << X[i] << " ";
+       51:   40-block  0
+call    0 returned 51
+branch  1 taken 51 (fallthrough)
+branch  2 taken 0 (throw)
+       51:   40-block  1
+call    3 returned 51
+branch  4 taken 51 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   41:  }
+        3:   42:  cout << endl;
+        3:   42-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   43:
+        3:   44:  fin.close();
+        3:   44-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   45:}
+        -:   46:
+function _Z6SAssesPKiS0_ called 2 returned 100% blocks executed 100%
+        2:   47:double SAsses(const int X1[], const int X2[]) {
+        2:   48:  int i, m = 0;
+        2:   49:  double n1 = 0, n2 = 0;
+        -:   50:
+       36:   51:  for (i = 0; i < 17; i++) {
+        2:   51-block  0
+       36:   51-block  1
+branch  0 taken 34 (fallthrough)
+branch  1 taken 2
+       34:   52:    m = m + X1[i] * X2[i];
+       34:   52-block  0
+        -:   53:  }
+       36:   54:  for (i = 0; i < 17; i++) {
+        2:   54-block  0
+       36:   54-block  1
+branch  0 taken 34 (fallthrough)
+branch  1 taken 2
+       34:   55:    n1 = n1 + X1[i] * X1[i];
+       34:   56:    n2 = n2 + X2[i] * X2[i];
+       34:   56-block  0
+        -:   57:  }
+        -:   58:
+        2:   59:  n1 = sqrt(n1);
+        2:   60:  n2 = sqrt(n2);
+        2:   61:  return m / (n1 * n2);
+        2:   61-block  0
+        -:   62:}
+        -:   63:
+function _Z6DAssesPKiS0_ called 2 returned 100% blocks executed 100%
+        2:   64:double DAsses(const int X1[], const int X2[]) {
+        2:   65:  int i, m = 0;
+        -:   66:  double k;
+        -:   67:
+       36:   68:  for (i = 0; i < 17; i++) {
+        2:   68-block  0
+       36:   68-block  1
+branch  0 taken 34 (fallthrough)
+branch  1 taken 2
+       34:   69:    m = m + (X1[i] - X2[i]) * (X1[i] - X2[i]);
+       34:   69-block  0
+        -:   70:  }
+        -:   71:
+        2:   72:  k = sqrt(m);
+        2:   72-block  0
+call    0 returned 2
+        2:   73:  return k;
+        -:   74:}
+        -:   75:
+function _Z8ReadWordRSt14basic_ifstreamIcSt11char_traitsIcEEPc called 179 returned 100% blocks executed 100%
+      179:   76:bool ReadWord(ifstream& fin, char str[]) {
+        -:   77:  char c;
+      179:   78:  int counter = 0;
+      179:   78-block  0
+        -:   79:
+     1663:   80:  while (fin.get(c)) {
+     1663:   80-block  0
+call    0 returned 1663
+branch  1 taken 1663 (fallthrough)
+branch  2 taken 0 (throw)
+     1663:   80-block  1
+call    3 returned 1663
+branch  4 taken 1663 (fallthrough)
+branch  5 taken 0 (throw)
+     1663:   80-block  2
+branch  6 taken 1660 (fallthrough)
+branch  7 taken 3
+     1484:   80-block  3
+     1660:   81:    if (!isalpha(c) && (counter <= 0)) {
+     1660:   81-block  0
+branch  0 taken 1092 (fallthrough)
+branch  1 taken 568
+     1092:   81-block  1
+branch  2 taken 916 (fallthrough)
+branch  3 taken 176
+        -:   82:      // 跳过非字母字符
+      916:   83:      continue;
+      916:   83-block  0
+      744:   84:    } else if (!isalpha(c) && (counter > 0)) {
+      744:   84-block  0
+branch  0 taken 176 (fallthrough)
+branch  1 taken 568
+      176:   84-block  1
+branch  2 taken 176 (fallthrough)
+branch  3 taken 0
+        -:   85:      // 一个单词读取完毕
+      176:   86:      break;
+      176:   86-block  0
+        -:   87:    }
+      568:   88:    str[counter++] = c;
+      568:   88-block  0
+        -:   89:  }
+        -:   90:
+      179:   91:  str[counter] = '\0';
+        -:   92:
+        -:   93:  // 成功返回true,否则返回false
+      179:   94:  return counter > 0;
+      179:   94-block  0
+      179:   94-block  1
+        -:   95:}
