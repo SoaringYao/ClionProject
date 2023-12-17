@@ -91,7 +91,7 @@ void SearchHash(LHashTable H, int n, KeyType key) {
 }
 
 // 查找最后一个字符
-char FindLast(KeyType key) { // NOLINT(*-non-const-parameter)
+char FindLast(KeyType key) {
   int i = 0;
   char ch;
   while (key[i] != '\0') {
