@@ -1,15 +1,6 @@
 # ninja log v5
-0	346	7244116410538544	CMakeFiles/SimHash.dir/SimAsses.cpp.obj	4d022bc4970e472e
-18	367	7244116410763630	CMakeFiles/SimHash.dir/OpenHashing.cpp.obj	4c9834ed6a669502
+3	326	7245095454751913	CMakeFiles/SimHash.dir/SimAsses.cpp.obj	4d022bc4970e472e
+13	324	7245095454711916	CMakeFiles/SimHash.dir/OpenHashing.cpp.obj	4c9834ed6a669502
 9	370	7244116410803642	CMakeFiles/SimHash.dir/main.cpp.obj	f6eba4ca00b93551
 26	374	7244116410833638	CMakeFiles/SimHash.dir/system.cpp.obj	3524944710be4249
-374	529	7244116412359031	SimHash.exe	d17d237e2918c630
-4	603	7244119013858819	CMakeFiles/SimHash.dir/OpenHashing.cpp.obj	4c9834ed6a669502
-604	890	7244119016662988	SimHash.exe	d17d237e2918c630
-5	3043	7245089191199440	CMakeFiles/SimHash.dir/SimAsses.cpp.obj	4d022bc4970e472e
-13	339	7245094175266268	CMakeFiles/SimHash.dir/OpenHashing.cpp.obj	4c9834ed6a669502
-4	345	7245094175316309	CMakeFiles/SimHash.dir/SimAsses.cpp.obj	4d022bc4970e472e
-356	3121	7245094203026668	SimHash.exe	d17d237e2918c630
-13	324	7245095454711916	CMakeFiles/SimHash.dir/OpenHashing.cpp.obj	4c9834ed6a669502
-3	326	7245095454751913	CMakeFiles/SimHash.dir/SimAsses.cpp.obj	4d022bc4970e472e
 326	569	7245095456408112	SimHash.exe	d17d237e2918c630

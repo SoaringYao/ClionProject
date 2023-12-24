@@ -11,6 +11,6 @@ D:\JetBrains\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCM
 -- Check for working CXX compiler: D:/mingw64/bin/c++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (8.2s)
+-- Configuring done (25.3s)
 -- Generating done (0.0s)
 -- Build files have been written to: F:/JetBrainsProj/ClionProject/C++/DataStructure/Experiment/SimHash/cmake-build-debug-coverage

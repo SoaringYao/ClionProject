@@ -57,15 +57,12 @@ double SAsses(const int X1[], const int X2[]) {
   int i, m = 0;
   double n1 = 0, n2 = 0;
 
-  // 计算X1和X2的点积
   for (i = 0; i < 17; i++) {
-    m += X1[i] * X2[i];
-  }
-  // 计算X1和X2的模
-  for (i = 0; i < 17; i++) {
-    n1 += X1[i] * X1[i];
+    m += X1[i] * X2[i];   // 计算X1和X2的点积
+    n1 += X1[i] * X1[i];  // 计算X1和X2的模
     n2 += X2[i] * X2[i];
   }
+
   n1 = sqrt(n1);
   n2 = sqrt(n2);
 
