@@ -50,7 +50,6 @@ void CreateHash(LHashTable &H) {
     p->next = nullptr;
     p->data.Data = 0;  // 计数
     p->data.key = new char[10];
-    // p->data.key=keyword[i];
     strcpy(p->data.key, keyword[i]);
 
     if (!H.elem[n]->next) {
@@ -59,13 +58,17 @@ void CreateHash(LHashTable &H) {
       p->next = H.elem[n]->next;
       H.elem[n]->next = p;
     }
-    // cout<<" "<<p->data.key<<n;
+    // cout << " " << p->data.key << n;
   }
-  /* p=H.elem[0]->next;
-   while(p){
-      cout<<" "<<p->data.key;
-      p=p->next;
-   }*/
+  for (i = 0; i < 42; i++) {
+    p = H.elem[i]->next;
+    while (p) {
+      cout << " " << p->data.key;
+      p = p->next;
+    }
+    cout << endl;
+  }
+
   fin.close();
 }
 
@@ -81,7 +84,6 @@ void SearchHash(LHashTable H, int n, KeyType key) {
   LHptr p;
   p = H.elem[n]->next;
   while (p) {
-    // if(!key.compare(p->data.key)){
     if (!strcmp(key, p->data.key)) {  // 等于则返回0
       p->data.Data++;
       break;

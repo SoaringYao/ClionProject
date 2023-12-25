@@ -22,35 +22,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="290df7d8-c8de-4d62-ad54-8c6fee91943d" name="Changes" comment="change">
-      <change afterPath="$PROJECT_DIR$/../../Homework/Merge Linklist/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Homework/Merge Linklist/function.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimAsses.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SimAsses.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/cache-v2-adbda6641b9e2c599da2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/cmakeFiles-v1-9dffb5c3f2a8172107fd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/index-2023-12-16T06-33-59-0205.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenHashing.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenHashing.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/OpenHashing.cpp.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/OpenHashing.cpp.gcda" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/OpenHashing.cpp.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/OpenHashing.cpp.gcno" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/OpenHashing.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/OpenHashing.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/SimAsses.cpp.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/SimAsses.cpp.gcda" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/SimAsses.cpp.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/SimAsses.cpp.gcno" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/SimAsses.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/SimAsses.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/main.cpp.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/main.cpp.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/system.cpp.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/system.cpp.gcda" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/clion-Debug-Coverage-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/clion-Debug-Coverage-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/SimHash.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/SimHash.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-4477f6a266b3baf9edcf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-32b020f843c2c734f995.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-12-16T06-33-53-0177.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Homework/Merge Linklist/function.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Homework/Merge Linklist/function.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Homework/Merge Linklist/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Homework/Merge Linklist/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Homework/Merge Linklist/main.exe" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +164,9 @@
       <workItem from="1703214216338" duration="935000" />
       <workItem from="1703250545610" duration="268000" />
       <workItem from="1703257213892" duration="637000" />
-      <workItem from="1703410048476" duration="4000" />
+      <workItem from="1703410048476" duration="607000" />
+      <workItem from="1703484513611" duration="1851000" />
+      <workItem from="1703488003384" duration="6000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <option name="closed" value="true" />
