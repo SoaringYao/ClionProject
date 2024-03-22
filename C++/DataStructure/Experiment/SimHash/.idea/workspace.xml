@@ -23,19 +23,9 @@
   <component name="ChangeListManager">
     <list default="true" id="290df7d8-c8de-4d62-ad54-8c6fee91943d" name="Changes" comment="change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenHashing.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenHashing.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/OpenHashing.cpp.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/OpenHashing.cpp.gcda" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/OpenHashing.cpp.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/OpenHashing.cpp.gcno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/OpenHashing.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/OpenHashing.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/SimAsses.cpp.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/SimAsses.cpp.gcda" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/SimAsses.cpp.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/SimAsses.cpp.gcno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/SimAsses.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/SimAsses.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/main.cpp.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/main.cpp.gcda" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/system.cpp.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/SimHash.dir/system.cpp.gcda" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/SimHash.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/SimHash.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/build.ninja" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +72,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -97,11 +87,6 @@
         <aux-dir>$APPLICATION_HOME_DIR$/jbr/bin</aux-dir>
       </texify-bibtex>
       <method v="2" />
-    </configuration>
-    <configuration name="SimHash" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SimHash" TARGET_NAME="SimHash" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SimHash" RUN_TARGET_NAME="SimHash">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="EXTERNAL_TOOL_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
       <texify-external>
@@ -141,6 +126,11 @@
       </texify-makeindex>
       <method v="2" />
     </configuration>
+    <configuration name="SimHash" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SimHash" TARGET_NAME="SimHash" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SimHash" RUN_TARGET_NAME="SimHash">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -167,6 +157,15 @@
       <workItem from="1703410048476" duration="607000" />
       <workItem from="1703484513611" duration="1851000" />
       <workItem from="1703488003384" duration="6000" />
+      <workItem from="1704731053046" duration="4000" />
+      <workItem from="1705757261107" duration="8000" />
+      <workItem from="1706357857179" duration="39000" />
+      <workItem from="1706357911100" duration="30000" />
+      <workItem from="1706357949426" duration="44000" />
+      <workItem from="1706358005388" duration="1000" />
+      <workItem from="1706368380297" duration="34000" />
+      <workItem from="1707568115313" duration="101000" />
+      <workItem from="1707568231562" duration="937000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <option name="closed" value="true" />
@@ -231,6 +230,10 @@
     <MESSAGE value="new" />
     <MESSAGE value="change" />
     <option name="LAST_COMMIT_MESSAGE" value="change" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="F:\JetBrainsProj\ClionProject\C++\DataStructure\Experiment\SimHash\cmake-build-debug-coverage" NAME="SimHash Coverage Results" MODIFIED="1702708552906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="gcov/llvm" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
