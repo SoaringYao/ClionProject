@@ -1,0 +1,6 @@
+# ninja log v6
+185	568	7508777265266689	CMakeFiles/HuffmanCodecSystem.dir/SqStack.cpp.obj	1fb29ce398086363
+10	1076	7508777263528401	CMakeFiles/HuffmanCodecSystem.dir/main.cpp.obj	5584a5611c31b3ef
+116	1156	7508777264588515	CMakeFiles/HuffmanCodecSystem.dir/System.cpp.obj	53e3b78ac72398bd
+40	1179	7508777263814881	CMakeFiles/HuffmanCodecSystem.dir/HuffmanCodec.cpp.obj	769ab8a4a3528e2e
+1179	1459	7508777275210972	HuffmanCodecSystem.exe	eeb0e515eac8be63
